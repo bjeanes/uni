@@ -1,6 +1,7 @@
 package inb370.asgn1;
 
 import java.lang.String;
+import java.text.DecimalFormat;
 
 public class Applicant {
 	private int id;
@@ -28,8 +29,8 @@ public class Applicant {
 	}
 	
 	public String toString() {
-//		TODO needs to display the quality as a percentage
+		DecimalFormat formatter = new DecimalFormat("#.##%");
 		return "Applicant #" + Integer.toString(getId()) + 
-			" (" + Double.toString(getQualityScore()) + ")";
+			" (" + formatter.format(getQualityScore()) + ")";
 	}
 }

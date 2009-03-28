@@ -43,9 +43,16 @@ public class HiringGame implements IHiringGame {
 		
 		if(current != null) awaitingApplicants.remove(current);
 		
-		int nextIndex = random.nextInt(awaitingApplicants.size());
-		current = (Applicant)awaitingApplicants.toArray()[nextIndex];
 
+		int size = awaitingApplicants.size();
+		
+		int nextIndex = random.nextInt(size);
+		current = (Applicant)awaitingApplicants.toArray()[nextIndex];
+		
+		if(size == 1) {
+			acceptApplicant();
+		}
+		
 		return current;
 	}
 
