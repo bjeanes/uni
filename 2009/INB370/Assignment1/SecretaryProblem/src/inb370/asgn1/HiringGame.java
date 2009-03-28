@@ -1,11 +1,15 @@
 package inb370.asgn1;
 
 import java.util.Random;
+import java.util.Set;
+import java.util.HashSet;
 
 public class HiringGame implements IHiringGame {
 	private int maxApplicants;
 	private Random random;
-	private Applicant[] applicants;
+	private Set<Applicant> awaitingApplicants;
+	private Set<Applicant> allApplicants;
+	private Applicant current;
 	private Applicant accepted;
 
 	@Override
@@ -21,7 +25,7 @@ public class HiringGame implements IHiringGame {
 		
 		Applicant best = null;
 		
-		for(Applicant applicant : applicants) {
+		for(Applicant applicant : allApplicants) {
 			if(best == null || applicant.getQualityScore() > best.getQualityScore()) {
 				best = applicant;
 			}
@@ -32,8 +36,15 @@ public class HiringGame implements IHiringGame {
 
 	@Override
 	public Applicant getNextApplicant() throws HiringException {
-		// TODO Auto-generated method stub
-		return null;
+		ensureGameHasStarted();
+		ensureGameHasNotConcluded();
+		
+		if(current != null) awaitingApplicants.remove(current);
+		
+		int nextIndex = random.nextInt(awaitingApplicants.size());
+		current = (Applicant)awaitingApplicants.toArray()[nextIndex];
+
+		return current;
 	}
 
 	@Override
@@ -59,10 +70,10 @@ public class HiringGame implements IHiringGame {
 		
 		this.maxApplicants = maxApplicants;
 		this.random = random;
-		this.applicants = new Applicant[maxApplicants];
+		this.awaitingApplicants = new HashSet<Applicant>();
 		
 		for(int i = 0; i < maxApplicants; i++) {
-			applicants[i] = new Applicant(i, random.nextDouble());
+			awaitingApplicants.add(new Applicant(i, random.nextDouble()));
 		}
 
 	}
