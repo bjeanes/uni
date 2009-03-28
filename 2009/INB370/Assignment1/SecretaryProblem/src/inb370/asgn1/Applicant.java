@@ -3,23 +3,32 @@ package inb370.asgn1;
 import java.lang.String;
 
 public class Applicant {
+	private int id;
+	private double qualityScore;
+	
 	public Applicant(int id, double qualityScore) {
-		
+		setId(id);
+		setQualityScore(qualityScore);
 	}
 	
 	public int getId() {
-		return 0;
+		return id;
 	}
 	
-	public void setId(int id) {}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public double getQualityScore() {
-		return 0.0;
+		return qualityScore;
 	}
 	
-	public void setQualityScore(double qualityScore) {}
+	public void setQualityScore(double qualityScore) {
+		this.qualityScore = qualityScore;
+	}
 	
 	public String toString() {
-		return "";
+		return "Applicant #" + Integer.toString(getId()) + 
+			" (" + Double.toString(getQualityScore()) + ")";
 	}
 }
