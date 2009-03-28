@@ -6,6 +6,7 @@ public class HiringGame implements IHiringGame {
 	private int maxApplicants;
 	private Random random;
 	private Applicant[] applicants;
+	private Applicant accepted;
 
 	@Override
 	public void acceptApplicant() throws HiringException {
@@ -15,8 +16,18 @@ public class HiringGame implements IHiringGame {
 
 	@Override
 	public Applicant getBestApplicant() throws HiringException {
-		// TODO Auto-generated method stub
-		return null;
+		if(applicants == null) throw new HiringException("There are no applicants.");
+		if(accepted == null) throw new HiringException("No applicant has been accepted yet.");
+		
+		Applicant best = null;
+		
+		for(Applicant applicant : applicants) {
+			if(best == null || applicant.getQualityScore() > best.getQualityScore()) {
+				best = applicant;
+			}
+		}
+		
+		return best;
 	}
 
 	@Override
@@ -27,8 +38,7 @@ public class HiringGame implements IHiringGame {
 
 	@Override
 	public boolean isAccepted() throws HiringException {
-		// TODO Auto-generated method stub
-		return false;
+		return (accepted != null);
 	}
 
 	@Override
