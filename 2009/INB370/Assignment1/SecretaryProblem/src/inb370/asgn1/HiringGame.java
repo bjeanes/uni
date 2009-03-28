@@ -10,14 +10,14 @@ public class HiringGame implements IHiringGame {
 
 	@Override
 	public void acceptApplicant() throws HiringException {
-		// TODO Auto-generated method stub
-
+		ensureGameHasStarted();
+		ensureGameHasNotConcluded();
 	}
 
 	@Override
 	public Applicant getBestApplicant() throws HiringException {
-		if(applicants == null) throw new HiringException("There are no applicants.");
-		if(accepted == null) throw new HiringException("No applicant has been accepted yet.");
+		ensureGameHasStarted();
+		ensureGameHasConcluded();
 		
 		Applicant best = null;
 		
@@ -38,6 +38,8 @@ public class HiringGame implements IHiringGame {
 
 	@Override
 	public boolean isAccepted() throws HiringException {
+		ensureGameHasStarted();
+		
 		return (accepted != null);
 	}
 
@@ -63,6 +65,21 @@ public class HiringGame implements IHiringGame {
 			applicants[i] = new Applicant(i, random.nextDouble());
 		}
 
+	}
+	
+	private void ensureGameHasStarted() throws HiringException {
+		if(maxApplicants == 0)
+			throw new HiringException("Game has not started.");
+	}
+	
+	private void ensureGameHasConcluded() throws HiringException {
+		if(!isAccepted()) 
+			throw new HiringException("Game has not been concluded.");
+	}
+	
+	private void ensureGameHasNotConcluded() throws HiringException {
+		if(isAccepted()) 
+			throw new HiringException("Game has concluded.");
 	}
 
 }
