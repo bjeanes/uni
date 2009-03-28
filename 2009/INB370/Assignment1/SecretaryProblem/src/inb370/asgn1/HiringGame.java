@@ -16,6 +16,8 @@ public class HiringGame implements IHiringGame {
 	public void acceptApplicant() throws HiringException {
 		ensureGameHasStarted();
 		ensureGameHasNotConcluded();
+		
+		accepted = current;
 	}
 
 	@Override
@@ -56,8 +58,10 @@ public class HiringGame implements IHiringGame {
 
 	@Override
 	public boolean isBestApplicant() throws HiringException {
-		// TODO Auto-generated method stub
-		return false;
+		ensureGameHasStarted();
+		ensureGameHasConcluded();
+		
+		return (accepted == getBestApplicant());
 	}
 
 	@Override
@@ -67,13 +71,20 @@ public class HiringGame implements IHiringGame {
 			throw new HiringException("There must be at least 1 applicant.");
 		if(random == null)
 			throw new HiringException("HiringGame requires a Random object.");
-		
+
 		this.maxApplicants = maxApplicants;
 		this.random = random;
-		this.awaitingApplicants = new HashSet<Applicant>();
+		
+		current = null;
+		accepted = null;
+		
+		awaitingApplicants = new HashSet<Applicant>();
+		allApplicants = new HashSet<Applicant>();
 		
 		for(int i = 0; i < maxApplicants; i++) {
-			awaitingApplicants.add(new Applicant(i, random.nextDouble()));
+			Applicant app = new Applicant(i, random.nextDouble());
+			awaitingApplicants.add(app);
+			allApplicants.add(app);
 		}
 
 	}
