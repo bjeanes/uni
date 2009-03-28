@@ -28,6 +28,7 @@ public class Applicant {
 	}
 	
 	public String toString() {
+//		TODO needs to display the quality as a percentage
 		return "Applicant #" + Integer.toString(getId()) + 
 			" (" + Double.toString(getQualityScore()) + ")";
 	}

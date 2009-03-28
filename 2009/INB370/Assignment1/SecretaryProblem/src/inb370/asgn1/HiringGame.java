@@ -81,7 +81,7 @@ public class HiringGame implements IHiringGame {
 		awaitingApplicants = new HashSet<Applicant>();
 		allApplicants = new HashSet<Applicant>();
 		
-		for(int i = 0; i < maxApplicants; i++) {
+		for(int i = 1; i <= maxApplicants; i++) {
 			Applicant app = new Applicant(i, random.nextDouble());
 			awaitingApplicants.add(app);
 			allApplicants.add(app);
