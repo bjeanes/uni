@@ -19,6 +19,7 @@ public class HiringGame implements IHiringGame {
 	public void acceptApplicant() throws HiringException {
 		ensureGameHasStarted();
 		ensureGameHasNotConcluded();
+		ensureGameHasACurrentApplicant();
 
 		accepted = current;
 	}
@@ -36,6 +37,11 @@ public class HiringGame implements IHiringGame {
 	private void ensureGameHasStarted() throws HiringException {
 		if (maxApplicants == 0)
 			throw new HiringException("Game has not started.");
+	}
+	
+	private void ensureGameHasACurrentApplicant() throws HiringException {
+		if (current == null)
+			throw new HiringException("Game has not fully started (at least one applicant needs to be requested).");
 	}
 
 	@Override

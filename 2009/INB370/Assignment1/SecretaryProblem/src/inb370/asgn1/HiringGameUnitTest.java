@@ -45,19 +45,25 @@ public class HiringGameUnitTest {
 	 * To be perfectly honest I am not sure if this one is SUPPOSED to throw an
 	 * exception or do nothing because there will be no "current" applicant
 	 * until the next one is asked for.
+	 * 
+	 * Based on {@code GamePanel} code in {@code handleNewGame()}, I am taking
+	 * the requirement here for a game to have "begun" to mean that at least one
+	 * applicant has been reviewed such that there is a "current" applicant.
+	 * However, I think this is rather open-ended and could go either way.
+	 * 
+	 * This means I will treat the expected behaviour here to raise an
+	 * exception.
 	 */
-	@Test
-	public void testAcceptApplicantAcceptsTheCurrentApplicant() {
+	@Test(expected = HiringException.class)
+	public void testAcceptApplicantAcceptsTheCurrentApplicant()
+			throws HiringException {
 		try {
 			game.newGame(maxApplicants, random);
-			game.acceptApplicant();
-
-			// FIXME: does not raise an exception, but does not accept any
-			// applicant either -- this causes it to fail. API discrepancy!
-			// assertTrue(game.isAccepted());
 		} catch (HiringException e) {
 			unexpectedHiringExceptionRaised(e);
 		}
+
+		game.acceptApplicant();
 	}
 
 	/**
