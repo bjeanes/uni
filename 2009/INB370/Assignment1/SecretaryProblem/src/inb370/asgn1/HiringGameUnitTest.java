@@ -118,7 +118,9 @@ public class HiringGameUnitTest {
 	 * {@code getNextApplicant()} had returned an item twice, the size would be
 	 * smaller.
 	 */
-	@Test
+	// This is a safety measure in case getNextApplicant() doesn't raise an
+	// exception to break the while loop
+	@Test(timeout = 500)
 	public void testGetNextApplicationReturnsEachItemExactlyOnce() {
 		HashSet<Applicant> set = new HashSet<Applicant>();
 
