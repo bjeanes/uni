@@ -7,5 +7,5 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses( { HiringGameUnitTest.class, ApplicantUnitTest.class })
 public class AllTests {
-
+	//	empty class just to run all of the tests in
 }
