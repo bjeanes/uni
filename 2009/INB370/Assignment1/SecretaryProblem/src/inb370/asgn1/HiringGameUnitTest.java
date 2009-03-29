@@ -65,18 +65,6 @@ public class HiringGameUnitTest {
 	}
 
 	/**
-	 * This tests that {@code getNextApplicant()} cannot be called before a game
-	 * is started without raising a {@code HiringException}.
-	 * 
-	 * @throws HiringException
-	 */
-	@Test(expected = HiringException.class)
-	public void testGetNextApplicantThrowsExceptionWhenGameHasNotStarted()
-			throws HiringException {
-		game.getNextApplicant();
-	}
-
-	/**
 	 * This tests three things:<br>
 	 * <br>
 	 * &nbsp;&nbsp; 1) That for {@code n} applicants, it will take
@@ -109,6 +97,18 @@ public class HiringGameUnitTest {
 					throw e;
 			}
 		}
+	}
+
+	/**
+	 * This tests that {@code getNextApplicant()} cannot be called before a game
+	 * is started without raising a {@code HiringException}.
+	 * 
+	 * @throws HiringException
+	 */
+	@Test(expected = HiringException.class)
+	public void testGetNextApplicantThrowsExceptionWhenGameHasNotStarted()
+			throws HiringException {
+		game.getNextApplicant();
 	}
 
 	/**
