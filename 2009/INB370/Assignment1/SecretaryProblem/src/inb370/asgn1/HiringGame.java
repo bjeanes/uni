@@ -2,7 +2,6 @@ package inb370.asgn1;
 
 import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
 /**
  * @author Bodaniel Jeanes (n5687802)
@@ -11,8 +10,8 @@ import java.util.Set;
 public class HiringGame implements IHiringGame {
 	private int maxApplicants;
 	private Random random;
-	private Set<Applicant> awaitingApplicants;
-	private Set<Applicant> allApplicants;
+	private HashSet<Applicant> awaitingApplicants;
+	private HashSet<Applicant> allApplicants;
 	private Applicant current;
 	private Applicant accepted;
 
