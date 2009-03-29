@@ -17,6 +17,7 @@ import org.junit.Test;
 public class HiringGameUnitTest {
 	private HiringGame game;
 	private Random random;
+	private int maxApplicants = 5; // Magic number alert! (:O)
 
 	/**
 	 * Tear down method that nullifies all variables to prevent test state
@@ -50,7 +51,7 @@ public class HiringGameUnitTest {
 	public void testGetNextApplicantThrowsExceptionWhenApplicantHasBeenAccepted()
 			throws HiringException {
 		try {
-			game.newGame(10, random);
+			game.newGame(maxApplicants, random);
 			game.getNextApplicant();
 			game.acceptApplicant();
 		} catch (HiringException e) {
@@ -71,6 +72,41 @@ public class HiringGameUnitTest {
 	public void testGetNextApplicantThrowsExceptionWhenGameHasNotStarted()
 			throws HiringException {
 		game.getNextApplicant();
+	}
+
+	/**
+	 * This tests three things:<br>
+	 * <br>
+	 * &nbsp;&nbsp; 1) That for {@code n} applicants, it will take
+	 * {@code (n - 1)} determine the outcome of the game; and<br>
+	 * &nbsp;&nbsp; 2) That the last applicant is automatically chosen when
+	 * there is only one left (other test only proves this when 1 applicant is
+	 * provided to begin with); and<br>
+	 * &nbsp;&nbsp; 3) That each applicant is only returned at most once,
+	 * because {@code (n + 1)} iterations throws the exception instead of
+	 * choosing an item from the least (Note: this does not test that each
+	 * applicant returned is unique).
+	 * 
+	 * @throws HiringException
+	 */
+	@Test(expected = HiringException.class)
+	public void testGetNextApplicantThrowsExceptionWhenCalledMoreTimesThanNumberOfApplicants()
+			throws HiringException {
+		game.newGame(maxApplicants, random);
+
+		// less than equal because we want to push it past boundary of
+		// applicants
+		for (int i = 0; i <= maxApplicants; i++) {
+			try {
+				game.getNextApplicant();
+			} catch (HiringException e) {
+				if (i < maxApplicants) {
+					// HiringException should not have been raised yet
+					unexpectedHiringExceptionRaised(e);
+				} else
+					throw e;
+			}
+		}
 	}
 
 	/**
@@ -95,7 +131,7 @@ public class HiringGameUnitTest {
 	@Test
 	public void testIsAcceptedReturnsFalseWhenAnApplicantHasNotBeenAccepted() {
 		try {
-			game.newGame(5, random);
+			game.newGame(maxApplicants, random);
 			game.getNextApplicant();
 			assertFalse(game.isAccepted());
 		} catch (HiringException e) {
@@ -110,7 +146,7 @@ public class HiringGameUnitTest {
 	@Test
 	public void testIsAcceptedReturnsTrueWhenAnApplicantHasBeenAccepted() {
 		try {
-			game.newGame(5, random);
+			game.newGame(maxApplicants, random);
 			game.getNextApplicant();
 			game.acceptApplicant();
 			assertTrue(game.isAccepted());
@@ -167,7 +203,7 @@ public class HiringGameUnitTest {
 	@Test(expected = HiringException.class)
 	public void testNewGameThrowsAnExceptionWhenGivenNullRandomObject()
 			throws HiringException {
-		game.newGame(5, null);
+		game.newGame(maxApplicants, null);
 	}
 
 	/**
