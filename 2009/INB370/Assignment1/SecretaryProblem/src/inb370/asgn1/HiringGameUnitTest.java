@@ -1,8 +1,10 @@
 package inb370.asgn1;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashSet;
 import java.util.Random;
 
 import org.junit.After;
@@ -107,6 +109,45 @@ public class HiringGameUnitTest {
 					throw e;
 			}
 		}
+	}
+
+	/**
+	 * This tests that each item that comes out of {@code getNextApplicant()} is
+	 * unique by adding it to a new {@code HashSet} and comparing the size.
+	 * {@code HashSet}s can only have one of each item so if the
+	 * {@code getNextApplicant()} had returned an item twice, the size would be
+	 * smaller.
+	 */
+	@Test
+	public void testGetNextApplicationReturnsEachItemExactlyOnce() {
+		HashSet<Applicant> set = new HashSet<Applicant>();
+
+		try {
+			game.newGame(maxApplicants, random);
+		} catch (HiringException e) {
+			unexpectedHiringExceptionRaised(e);
+		}
+
+		while (true) {
+			try {
+				Applicant applicant = game.getNextApplicant();
+
+				// extra level of checking makes sure that this item has never
+				// been returned before:
+				assertFalse(set.contains(applicant));
+
+				// Add it so future iterations can verify it isn't returned
+				// again:
+				set.add(applicant);
+			} catch (HiringException e) {
+				break;
+			}
+		}
+
+		// Sanity check: if the size differs from the maxApplicants, then
+		// getNextApplicant() has either returned duplicate values or not enough
+		// values:
+		assertEquals(set.size(), maxApplicants);
 	}
 
 	/**
