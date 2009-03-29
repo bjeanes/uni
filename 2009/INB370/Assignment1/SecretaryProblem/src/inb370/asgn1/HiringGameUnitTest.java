@@ -111,6 +111,53 @@ public class HiringGameUnitTest {
 	}
 
 	/**
+	 * This tests that after a game is started and an applicant is chosen
+	 * {@code getBestApplicant()} returns the correct {@code Applicant}
+	 * instance.
+	 */
+	@Test
+	public void testGetBestApplicantReturnsCorrectApplicant() {
+		try {
+			game.newGame(1, random);
+			Applicant app = game.getNextApplicant();
+			assertEquals(game.getBestApplicant(), app);
+		} catch (HiringException e) {
+			unexpectedHiringExceptionRaised(e);
+		}
+	}
+
+	/**
+	 * This tests that {@code getBestApplicant()} throws a
+	 * {@code HiringException} when a game has not been started.
+	 * 
+	 * @throws HiringException
+	 */
+	@Test(expected = HiringException.class)
+	public void testGetBestApplicantThrowsExceptionWhenGameHasNotBeenStarted()
+			throws HiringException {
+		game.getBestApplicant();
+	}
+
+	/**
+	 * This tests that {@code getBestApplicant()} throws a
+	 * {@code HiringException} when an applicant has NOT been selected.
+	 * 
+	 * @throws HiringException
+	 */
+	@Test(expected = HiringException.class)
+	public void testGetBestApplicantThrowsExceptionWhenApplicantHasNotBeenSelected()
+			throws HiringException {
+		try {
+			game.newGame(5, random);
+			game.getNextApplicant();
+		} catch (HiringException e) {
+			unexpectedHiringExceptionRaised(e);
+		}
+
+		game.getBestApplicant();
+	}
+
+	/**
 	 * This tests that {@code getNextApplicant()} properly throws a
 	 * {@code HiringException} when an applicant has already been chosen. It
 	 * also ensures that no other method is the cause of the exception in the
@@ -265,6 +312,55 @@ public class HiringGameUnitTest {
 		} catch (HiringException e) {
 			unexpectedHiringExceptionRaised(e);
 		}
+	}
+
+	/**
+	 * This tests that {@code isBestApplicant()} returns true when a correct
+	 * applicant is chosen.
+	 */
+	@Test
+	public void testIsBestApplicantReturnsTrueWhenACorrectApplicantIsChosen() {
+		try {
+			game.newGame(1, random);
+
+			// This will auto-accept the only applicant (hence the right one)
+			game.getNextApplicant();
+
+			assertTrue(game.isBestApplicant());
+		} catch (HiringException e) {
+			unexpectedHiringExceptionRaised(e);
+		}
+	}
+
+	/**
+	 * This tests that {@code isBestApplicant()} throws a
+	 * {@code HiringException} when the game has not started.
+	 * 
+	 * @throws HiringException
+	 */
+	@Test(expected = HiringException.class)
+	public void testIsBestApplicantThrowsExceptionWhenGameHasNotStarted()
+			throws HiringException {
+		game.isBestApplicant();
+	}
+
+	/**
+	 * This tests that {@code isBestApplicant()} throws a
+	 * {@code HiringException} when an applicant has NOT been accepted.
+	 * 
+	 * @throws HiringException
+	 */
+	@Test(expected = HiringException.class)
+	public void testIsBestApplicantThrowsExceptionWhenApplicantHasNotBeenAccepted()
+			throws HiringException {
+		try {
+			game.newGame(maxApplicants, random);
+			game.getNextApplicant();
+		} catch (HiringException e) {
+			unexpectedHiringExceptionRaised(e);
+		}
+
+		game.isBestApplicant();
 	}
 
 	/**
