@@ -333,6 +333,27 @@ public class HiringGameUnitTest {
 	}
 
 	/**
+	 * This tests that {@code isBestApplicant()} returns false when an incorrect
+	 * applicant is chosen.
+	 */
+	@Test
+	public void testIsBestApplicantReturnsFalseWhenAIncorrectApplicantIsChosen() {
+		try {
+			// Make this sufficiently high because I am not sure how to mock out
+			// the best applicant...
+			game.newGame(100000, random);
+
+			// This will auto-accept the only applicant (hence the right one)
+			game.getNextApplicant();
+			game.acceptApplicant();
+
+			assertFalse(game.isBestApplicant());
+		} catch (HiringException e) {
+			unexpectedHiringExceptionRaised(e);
+		}
+	}
+
+	/**
 	 * This tests that {@code isBestApplicant()} throws a
 	 * {@code HiringException} when the game has not started.
 	 * 
