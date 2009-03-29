@@ -13,7 +13,7 @@ import org.junit.Test;
 
 /**
  * 
- * @author Bodaniel Jeanes
+ * @author Bodaniel Jeanes (n5687802)
  * 
  */
 public class HiringGameUnitTest {
