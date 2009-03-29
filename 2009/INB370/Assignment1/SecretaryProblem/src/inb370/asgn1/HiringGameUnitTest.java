@@ -1,5 +1,11 @@
 package inb370.asgn1;
 
+import java.util.Random;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 /**
  * Basic Rules of hiring game:
  * 	1.	There is a single secretarial position to fill.
@@ -16,5 +22,74 @@ package inb370.asgn1;
  *
  */
 public class HiringGameUnitTest {
+	private HiringGame game;
+	private Random random;
+
+	@After
+	public void after() {
+		game = null;
+		random = null;
+	}
+
+	@Before
+	public void before() {
+		game = new HiringGame();
+		random = new Random();
+	}
 	
+	@Test(expected=HiringException.class)
+	public void testNewGameThrowsAnExceptionWhenGivenNullRandomObject() throws HiringException {
+		game.newGame(5, null);
+	}
+	
+	@Test(expected=HiringException.class)
+	public void testNewGameThrowsAnExceptionWhenGivenZeroMaxApplicant() throws HiringException {
+		game.newGame(0, random);
+	}
+	
+	@Test(expected=HiringException.class)
+	public void testNewGameThrowsAnExceptionWhenGivenNegativeMaxApplicant() throws HiringException {
+		game.newGame(-1, random);
+	}
+	
+	@Test
+	public void testNewGameDoesNotThrowAnExceptionWhenGivenOneMaxApplicant() {
+		try { game.newGame(1, random); }
+		catch(HiringException e) {
+			AssertionError ae = new AssertionError();
+			ae.initCause(e);
+			throw ae;
+		}
+	}
+
+	@Test
+	public void testNewGameDoesNotThrowAnExceptionWhenGivenNormalAmountOfMaxApplicant() {
+		try { game.newGame(100, random); }
+		catch(HiringException e) {
+			AssertionError ae = new AssertionError();
+			ae.initCause(e);
+			throw ae;
+		}
+	}
+	
+	@Test(expected=HiringException.class)
+	public void testGetNextApplicantThrowsExceptionWhenGameHasNotStarted() throws HiringException {
+		game.getNextApplicant();
+	}
+	
+	@Test(expected=HiringException.class)
+	public void testGetNextApplicantThrowsExceptionWhenApplicantHasBeenAccepted() throws HiringException {
+		try {
+			game.newGame(10, random);
+			game.getNextApplicant();
+			game.acceptApplicant();
+		} catch(HiringException e) {
+			AssertionError ae = new AssertionError();
+			ae.initCause(e);
+			throw ae;
+		}
+		
+		// Only is a success if this call raises a HiringException		
+		game.getNextApplicant();
+	}
 }

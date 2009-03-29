@@ -1,7 +1,6 @@
 package inb370.asgn1;
 
 import java.lang.String;
-import java.text.DecimalFormat;
 
 public class Applicant {
 	private int id;
@@ -26,13 +25,12 @@ public class Applicant {
 	
 	public void setQualityScore(double qualityScore) 
 			throws IllegalArgumentException {
-		if(qualityScore >= 1.0) throw new IllegalArgumentException();
+		if(qualityScore > 1.0 || qualityScore < 0.0) throw new IllegalArgumentException();
 		this.qualityScore = qualityScore;
 	}
 	
 	public String toString() {
-		DecimalFormat formatter = new DecimalFormat("#.##%");
 		return "Applicant #" + Integer.toString(getId()) + 
-			" (" + formatter.format(getQualityScore()) + ")";
+			" (" + String.format("%1$.2f%%", getQualityScore() * 100.0) + ")";
 	}
 }

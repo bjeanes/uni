@@ -4,6 +4,10 @@ import java.util.Random;
 import java.util.Set;
 import java.util.HashSet;
 
+/**
+ * @author Bodaniel Jeanes (n5687802)
+ *
+ */
 public class HiringGame implements IHiringGame {
 	private int maxApplicants;
 	private Random random;
@@ -72,8 +76,7 @@ public class HiringGame implements IHiringGame {
 	}
 
 	@Override
-	public void newGame(int maxApplicants, Random random)
-			throws HiringException {
+	public void newGame(int maxApplicants, Random random) throws HiringException {
 		if(maxApplicants < 1) 
 			throw new HiringException("There must be at least 1 applicant.");
 		if(random == null)
