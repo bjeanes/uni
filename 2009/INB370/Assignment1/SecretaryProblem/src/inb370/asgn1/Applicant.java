@@ -1,7 +1,5 @@
 package inb370.asgn1;
 
-import java.lang.String;
-
 public class Applicant {
 	private int id;
 	private double qualityScore;
@@ -15,12 +13,12 @@ public class Applicant {
 		return id;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
 	public double getQualityScore() {
 		return qualityScore;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public void setQualityScore(double qualityScore) 
