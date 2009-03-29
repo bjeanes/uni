@@ -1,5 +1,10 @@
 package inb370.asgn1;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
+
 import java.util.Random;
 
 import org.junit.After;
@@ -7,16 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Basic Rules of hiring game:
- * 	1.	There is a single secretarial position to fill.
- *	2.	There are n applicants for the position, and the value of n is known.
- *	3.	The applicants can be ranked from best to worst with no ties.
- *	4.	The applicants are interviewed sequentially in a random order, with each order being equally likely.
- *	5.	After each interview, the applicant is accepted or rejected.
- *	6.	The decision to accept or reject an applicant can be based only on the relative ranks of the applicants interviewed so far.
- *	7.	Rejected applicants cannot be recalled.
- *	8.	If the first n-1 applicants are rejected, then the final applicant is automatically accepted. 
- *	9.	The object is to select the best applicant. You win the game only if you get the very best applicant. Otherwise you lose. 
  *
  * @author Bodaniel Jeanes
  *
@@ -91,5 +86,39 @@ public class HiringGameUnitTest {
 		
 		// Only is a success if this call raises a HiringException		
 		game.getNextApplicant();
+	}
+	
+	/**
+	 * This tests that if an applicant has been accepted using {@code acceptApplicant()},
+	 * isAccepted will return {@code true}.
+	 */
+	@Test
+	public void testIsAcceptedReturnsTrueWhenAnApplicantHasBeenAccepted() {
+		try {
+			game.newGame(5, random);
+			game.getNextApplicant();
+			game.acceptApplicant();
+			assertTrue(game.isAccepted());
+		} catch(HiringException e) {
+			AssertionError ae = new AssertionError();
+			ae.initCause(e);
+			throw ae;
+		}
+	}
+	
+	/**
+	 * This tests that the game will immediately accept a single applicant. 
+	 */
+	@Test
+	public void testIsAcceptedImmediatelyIfOnlyOneApplicant() {
+		try {
+			game.newGame(1, random);
+			game.getNextApplicant();
+			assertTrue(game.isAccepted());
+		} catch (HiringException e) {
+			AssertionError ae = new AssertionError();
+			ae.initCause(e);
+			throw ae;
+		}
 	}
 }
