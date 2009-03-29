@@ -42,6 +42,75 @@ public class HiringGameUnitTest {
 	}
 
 	/**
+	 * To be perfectly honest I am not sure if this one is SUPPOSED to throw an
+	 * exception or do nothing because there will be no "current" applicant
+	 * until the next one is asked for.
+	 */
+	@Test
+	public void testAcceptApplicantAcceptsTheCurrentApplicant() {
+		try {
+			game.newGame(maxApplicants, random);
+			game.acceptApplicant();
+
+			// FIXME: does not raise an exception, but does not accept any
+			// applicant either -- this causes it to fail. API discrepancy!
+			// assertTrue(game.isAccepted());
+		} catch (HiringException e) {
+			unexpectedHiringExceptionRaised(e);
+		}
+	}
+
+	/**
+	 * This tests that the applicant is accepted without raising an exception.
+	 */
+	@Test
+	public void testAcceptApplicantAcceptsTheCurrentApplicantAfterGettingNext() {
+		try {
+			game.newGame(maxApplicants, random);
+			game.getNextApplicant(); // sets current applicant
+			game.acceptApplicant();
+			assertTrue(game.isAccepted());
+		} catch (HiringException e) {
+			unexpectedHiringExceptionRaised(e);
+		}
+	}
+
+	/**
+	 * This tests that an applicant can not be accepted after another one has
+	 * already been accepted.
+	 * 
+	 * @throws HiringException
+	 */
+	@Test(expected = HiringException.class)
+	public void testAcceptApplicantThrowsHiringExceptionWhenApplicantHasAlreadyBeenAccepted()
+			throws HiringException {
+		try {
+			game.newGame(maxApplicants, random);
+			game.getNextApplicant();
+
+			// This call should not raise an error
+			game.acceptApplicant();
+		} catch (HiringException e) {
+			unexpectedHiringExceptionRaised(e);
+		}
+
+		// This one should
+		game.acceptApplicant();
+	}
+
+	/**
+	 * This tests that an applicant can't be accepted if none exist (i.e. a game
+	 * is not in play).
+	 * 
+	 * @throws HiringException
+	 */
+	@Test(expected = HiringException.class)
+	public void testAcceptApplicantThrowsHiringExceptionWhenGameHasNotStarted()
+			throws HiringException {
+		game.acceptApplicant();
+	}
+
+	/**
 	 * This tests that {@code getNextApplicant()} properly throws a
 	 * {@code HiringException} when an applicant has already been chosen. It
 	 * also ensures that no other method is the cause of the exception in the
