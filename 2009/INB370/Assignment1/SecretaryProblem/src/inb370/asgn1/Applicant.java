@@ -24,7 +24,9 @@ public class Applicant {
 		return qualityScore;
 	}
 	
-	public void setQualityScore(double qualityScore) {
+	public void setQualityScore(double qualityScore) 
+			throws IllegalArgumentException {
+		if(qualityScore >= 1.0) throw new IllegalArgumentException();
 		this.qualityScore = qualityScore;
 	}
 	
