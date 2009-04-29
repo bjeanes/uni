@@ -18,6 +18,7 @@ derby.log
 .classpath
 .project
 .manager
+*.index
  
 # building
 target
