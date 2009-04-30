@@ -44,7 +44,8 @@ public class ThreadedFillDemo extends JFrame implements ActionListener {
 
    public void actionPerformed(ActionEvent e) {
       Packer packer = new Packer(box);
-      packer.start();
+      Thread t = new Thread(packer);
+      t.start();
    }
 
    /**

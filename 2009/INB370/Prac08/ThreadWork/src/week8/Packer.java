@@ -7,7 +7,7 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-public class Packer extends Thread {
+public class Packer implements Runnable {
 
     private JPanel box;
     
