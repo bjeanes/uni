@@ -1,3 +1,6 @@
 [submodule "2009/INB307/DearQUT"]
 	path = 2009/INB307/DearQUT
 	url = git@github.com:bjeanes/dearqut.git
+[submodule "2009/INB370/Assignment2"]
+	path = 2009/INB370/Assignment2
+	url = git@github.com:dekz/CargoManager.git
