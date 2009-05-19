@@ -1,0 +1,8 @@
+SELECT Stars.FamilyName, Stars.GivenName, Movies.Title
+FROM Movies 
+	NATURAL JOIN Stars
+	JOIN ActsIn ON
+		ActsIn.StarId = Stars.StarId
+WHERE Stars.FamilyName = 'Kidman' AND
+      Stars.GivenName = 'Nicole'
+AND Movies.MovieNum = ActsIn.MovieNum;

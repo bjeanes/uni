@@ -1,0 +1,4 @@
+select title, min(yearreleased), max(yearreleased)
+from movies
+group by title
+having count(yearreleased) > 1;

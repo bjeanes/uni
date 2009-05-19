@@ -1,0 +1,9 @@
+select title, yearreleased
+from movies
+where title not in
+	(select m.title
+	 from movies m, copies c
+	 where m.movienum = c.movienum
+	 and c.format = 'dvd'
+	)
+order by title; -- will return originals and remakes as separate movies

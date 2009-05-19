@@ -1,0 +1,4 @@
+SELECT Movies.Title, Movies.YearReleased FROM Stars, ActsIn, Movies        
+        WHERE Stars.StarId = ActsIn.StarId   
+        AND ActsIn.MovieNum = Movies.MovieNum
+	AND Stars.GivenName = 'Nicole' AND Stars.FamilyName = 'Kidman';

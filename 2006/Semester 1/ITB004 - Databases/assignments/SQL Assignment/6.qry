@@ -1,0 +1,5 @@
+SELECT Stars.GivenName || ' ' || Stars.FamilyName as FullName FROM Stars, ActsIn, Movies        
+        WHERE Stars.StarId = ActsIn.StarId   
+        AND ActsIn.MovieNum = Movies.MovieNum
+	GROUP BY FullName
+	HAVING count(ActsIn.MovieNum) >= 2;

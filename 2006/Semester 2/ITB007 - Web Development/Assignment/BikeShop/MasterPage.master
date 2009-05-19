@@ -1,0 +1,171 @@
+<%@ Master CodeFile="MasterPage.master.vb" Inherits="MasterPage" Language="VB" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>The Bike Shop</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="treeviewform" runat="server">
+        <div id="page-container">
+            <!-- Sitename and Banner -->
+            <div>
+                <asp:Image ID="PageHeader" runat="server" CssClass="img-header" ImageUrl="~/img/header.jpg" /></div>
+            <!-- Main navigation -->
+            <h3 class="hide">
+                Main Navigation</h3>
+            <div class="nav-main nav-main-font">
+                <ul>
+                    <li>
+                        <asp:HyperLink ID="Navbar1" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="NavBar2" runat="server" NavigateUrl="~/bikecare.aspx">Bike Care</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="NavBar3" runat="server" NavigateUrl="~/catalogue.aspx">Catalogue</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="NavBar4" runat="server" NavigateUrl="~/shoppingcart.aspx">Shopping Cart</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="NavBar5" runat="server" NavigateUrl="~/profile.aspx">Profile</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="NavBar6" runat="server" NavigateUrl="~/register.aspx">Register</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="NavBar7" runat="server" NavigateUrl="~/affiliates.aspx">Affiliates</asp:HyperLink></li>
+                </ul>
+            </div>
+            <!-- FRONT PAGE SIDE NAVIGATION -->
+            <div class="sidebanner-frontpage">
+                <div id="UserLoginDiv" runat="server" class="sidebarbox-border bg-grey02" style="position: relative;
+                    left: 4px; top: 20px; width: 143px;">
+                    <div class="sidebarbox-title-shading bg-grey05 txt-white">
+                        <asp:Label ID="LoginTextLabel" runat="server"></asp:Label></div>
+                    <div id="LoginDiv" runat="server" class="sidebarbox-noborder">
+                        <p>
+                            Registered user?<br />
+                            <asp:HyperLink ID="LoginHyperlink" runat="Server" NavigateUrl="~/login.aspx" Text="Login here"></asp:HyperLink></p>
+                        <p>
+                            Don't have an account?<br />
+                            <asp:HyperLink ID="RegisterHyperlink" runat="server" NavigateUrl="~/register.aspx"
+                                Text="Register here"></asp:HyperLink></p>
+                    </div>
+                    <div id="LogoutDiv" runat="server" class="sidebarbox-noborder">
+                        <p>
+                            <asp:HyperLink ID="ProfileHyperLink" runat="server" NavigateUrl="~/profile.aspx"
+                                Text="Go To Profile"></asp:HyperLink><br />
+                            <asp:HyperLink ID="ShoppingHyperLink" runat="server" NavigateUrl="~/catalogue.aspx"
+                                Text="Go Shopping"></asp:HyperLink></p>
+                        <p class="align-centre">
+                            <asp:Button ID="LogoutButton" runat="server" Text="Logout" /></p>
+                    </div>
+                </div>
+                <div class="sidebarbox-border bg-grey02" style="position: relative; left: 4px; width: 143px;
+                    top: 24px; height: 433px;">
+                    <div class="sidebarbox-title-shading bg-grey05 txt-white">
+                        Navigation</div>
+                    <asp:TreeView ID="trvDefaultNav" runat="server" CollapseImageUrl="~/img/tree_collapse.gif"
+                        DataSourceID="SiteMapDataSource1" ExpandDepth="1" ExpandImageUrl="~/img/tree_expand.gif"
+                        ImageSet="Msdn" NodeIndent="10" NoExpandImageUrl="~/img/spacer.gif" PopulateNodesFromClient="false"
+                        Style="z-index: 100; left: 6px; position: absolute; top: 35px">
+                        <ParentNodeStyle Font-Bold="False" />
+                        <HoverNodeStyle BackColor="#CCCCCC" Font-Underline="True" />
+                        <SelectedNodeStyle BackColor="White" BorderColor="#888888" BorderStyle="Solid" BorderWidth="1px"
+                            Font-Underline="False" HorizontalPadding="3px" VerticalPadding="1px" />
+                        <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px"
+                            NodeSpacing="1px" VerticalPadding="2px" />
+                    </asp:TreeView>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                </div>
+            </div>
+            <!-- WRAP CONTENT AND SIDEBAR -->
+            <div class="container-content-sidebar">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" Height="9px" Style="z-index: 102;
+                    left: 10px; position: relative; top: 11px" Width="453px">
+                </asp:SiteMapPath>
+                <!-- 	CONTENT -->
+                <div class="content content-font">
+                    <asp:ContentPlaceHolder ID="contentMainPlaceHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- SIDEBAR -->
+                <div class="sidebar sidebar-font">
+                    <div id="SearchBoxDiv" runat="server" class="sidebarbox-border bg-grey02" style="left: 5px;
+                        position: relative; top: -35px">
+                        <div class="sidebarbox-title-shading bg-grey05 txt-white">
+                            Search for Products</div>
+                        <asp:TextBox ID="txtboxSearch" runat="server" Style="left: 9px; position: relative;
+                            top: 0px" Width="107px"></asp:TextBox>
+                        <br />
+                        <br />
+                        <asp:Button ID="Button2" runat="server" Height="25px" Style="left: 50px; position: relative;
+                            top: -6px" Text="Go" Width="30px" />
+                    </div>
+                    <div class="sidebarbox-border bg-grey02" style="left: 5px; position: relative; top: -39px">
+                        <div class="sidebarbox-title-shading bg-grey05 txt-white">
+                            Shopping Cart</div>
+                        <div id="EmptyCart" runat="server">
+                            <p class="align-centre">
+                                EMPTY</p>
+                        </div>
+                        <div id="NonEmptyCart" runat="server">
+                            <p>
+                                Items:
+                                <asp:Label ID="CartItemsLabel" runat="server"></asp:Label></p>
+                            <p>
+                                Total:
+                                <asp:Label ID="CartTotalLabel" runat="server"></asp:Label></p>
+                            <div style="left: 37px; position: relative; top: 2px">
+                                <asp:Image ID="ShoppingCartImg" runat="server" Height="20px" ImageUrl="~/img/cart_item.jpg"
+                                    Width="20px" /></div>
+                            <br />
+                            <a href="shoppingcart.aspx">View Cart</a> <a href="checkout.aspx">Checkout</a></div>
+                    </div>
+                    <div class="sidebarbox-border bg-grey02" style="left: 5px; position: relative; top: -35px">
+                        <div class="sidebarbox-title-shading bg-grey05 txt-white">
+                            Weekly Special!</div>
+                        <p>
+                            Check out this weeks 10% BMX special!</p>
+                        <asp:Image ID="bike4pic" runat="server" Height="90px" ImageUrl="~/img/bike4.jpg"
+                            Width="125" />
+                        <p>
+                            Click <a href="#">here</a></p>
+                    </div>
+                    <div class="sidebarbox-border bg-grey02" style="left: 5px; position: relative; top: -36px">
+                        <div class="sidebarbox-title-shading bg-grey05 txt-white">
+                            Weekly Special!</div>
+                        <p>
+                            Check out this weeks 10% BMX Special!</p>
+                        <asp:Image ID="bike4pic2" runat="server" Height="90px" ImageUrl="~/img/bike1.jpg"
+                            Width="125" />
+                        <p>
+                            Click <a href="#">here</a></p>
+                    </div>
+                    <div class="sidebarbox-border bg-grey02" style="left: 5px; position: relative; top: -40px">
+                        <div class="sidebarbox-title-shading bg-grey05 txt-white">
+                            Any questions?</div>
+                        <p>
+                            Feel free to <a href="mailto:ltgeo@iinet.net.au">email</a> us.</p>
+                        <p>
+                            &nbsp;</p>
+                        <p>
+                            &nbsp;</p>
+                        <p>
+                            &nbsp;</p>
+                        <p>
+                            &nbsp;</p>
+                    </div>
+                </div>
+                <!-- END WRAP CONTENT AND SIDEBAR -->
+            </div>
+            <!-- FOOTER -->
+            <h3 class="hide">
+                Footer</h3>
+            <div class="footer footer-font">
+                Copyright &copy; 2006 Working Title | All Rights Reserved<br />
+                Design: Made in Austria | Author: <a href="mailto:gw@actamail.com">G. Wolfgang</a>
+                | <a href="http://validator.w3.org/check?uri=referer" title="Validate code as W3C XHTML 1.1 Strict Compliant">
+                    W3C XHTML 1.1</a> | <a href="http://jigsaw.w3.org/css-validator/" title="Validate Style Sheet as W3C CSS 2.0 Compliant">
+                        W3C CSS 2.0</a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

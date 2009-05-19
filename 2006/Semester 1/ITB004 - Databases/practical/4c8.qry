@@ -1,0 +1,6 @@
+CREATE TABLE Tracks       
+( AlbumCode char(12) NOT NULL,
+TrackNumber numeric(2) NOT NULL,
+TrackTitle varchar(60) NOT NULL,
+LENGTH numeric(4) NOT NULL
+);           

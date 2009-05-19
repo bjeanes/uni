@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode title="Home" description="Home" url="Default.aspx" >
+
+		<siteMapNode title="About Us" description="About Us" url="aboutus.aspx" />
+
+		<siteMapNode title="Contact" description="Contact" url="contact.aspx" />
+
+		<siteMapNode title="Privacy Policy" description="Privacy Policy" url="privacy.aspx" />
+
+		<siteMapNode title="Bike Care" description="Bike Care" url="bikecare.aspx" />
+
+		<siteMapNode title="Catalogue" description="Catalogue" url="catalogue.aspx">
+			<siteMapNode title="Bikes" description="Bikes" url="Catalogue/bikes.aspx">
+				<siteMapNode title="Mountain" description="Mountain" url="Catalogue/Bikes/mountain.aspx">
+					<siteMapNode title="Entry Level" description="Entry Level" url="productlisting.aspx?CatID=7" />
+					<siteMapNode title="Midrange" description="Midrange" url="productlisting.aspx?CatID=8" />
+					<siteMapNode title="Professional" description="Professional" url="productlisting.aspx?CatID=9" />
+				</siteMapNode>
+				<siteMapNode title="BMX" description="BMX" url="Catalogue/Bikes/bmx.aspx">
+					<siteMapNode title="Entry Level" description="Entry Level" url="productlisting.aspx?CatID=10" />
+					<siteMapNode title="Midrange" description="Midrange" url="productlisting.aspx?CatID=11" />
+					<siteMapNode title="Professional" description="Professional" url="productlisting.aspx?CatID=12" />
+				</siteMapNode>
+				<siteMapNode title="Road" description="Road" url="Catalogue/Bikes/road.aspx">
+					<siteMapNode title="Entry Level" description="Entry Level" url="productlisting.aspx?CatID=13" />
+					<siteMapNode title="Midrange" description="Midrange" url="productlisting.aspx?CatID=14" />
+					<siteMapNode title="Professional" description="Professional" url="productlisting.aspx?CatID=15" />
+				</siteMapNode>
+			</siteMapNode>
+			<siteMapNode title="Parts" description="Parts" url="Catalogue/parts.aspx">
+				<siteMapNode title="Forks" description="Forks" url="productlisting.aspx?CatID=16"/>
+				<siteMapNode title="Frames" description="Frames" url="productlisting.aspx?CatID=17" />
+				<siteMapNode title="Wheels" description="Wheels" url="productlisting.aspx?CatID=18" />
+				<siteMapNode title="Handle Bars" description="Handle Bars" url="productlisting.aspx?CatID=19" />
+			</siteMapNode>
+			<siteMapNode title="Accessories" description="Accessories" url="Catalogue/accessories.aspx">
+				<siteMapNode title="Clothing" description="Clothing" url="Catalogue/Accessories/clothes.aspx">
+					<siteMapNode title="Pants" description="Pants" url="productlisting.aspx?CatID=23" />
+					<siteMapNode title="Shirts" description="Shirts" url="productlisting.aspx?CatID=24" />
+					<siteMapNode title="Other" description="Other" url="productlisting.aspx?CatID=25" />
+				</siteMapNode>
+				<siteMapNode title="Protection" description="Protection" url="Catalogue/Accessories/protection.aspx">
+					<siteMapNode title="Helmets" description="Helmets" url="productlisting.aspx?CatID=26" />
+					<siteMapNode title="Body Armour" description="Body Armour" url="productlisting.aspx?CatID=27" />
+					<siteMapNode title="Elephant Skins" description="Elephant Skins" url="productlisting.aspx?CatID=28" />
+				</siteMapNode>
+				<siteMapNode title="Miscellaneous" description="Miscellaneous" url="productlisting.aspx?CatID=22" />
+			</siteMapNode>
+		</siteMapNode>
+		<siteMapNode title="Shopping Cart" description="Shopping Cart" url="shoppingcart.aspx">
+		</siteMapNode>
+		<siteMapNode title="Profile" description="Profile" url="profile.aspx">
+			<siteMapNode title="History" description="History" url="Profile/history.aspx" />
+			<siteMapNode title="Edit Details" description="Edit Details" url="Profile/editdetails.aspx" />
+			<siteMapNode title="Order Status" description="Order Status" url="Profile/orderstatus.aspx" />
+		</siteMapNode>
+		<siteMapNode title="Register" description="Register" url="register.aspx">
+		</siteMapNode>
+		<siteMapNode title="Affiliates" description="Affiliates" url="affiliates.aspx">
+		</siteMapNode>
+		<siteMapNode title="Site Map" description="Site Map" url="sitemap.aspx">
+		</siteMapNode>
+		<siteMapNode title="Admin" description="Admin" url="Admin/default.aspx">
+		  <siteMapNode title="Edit News" description="Edit News" url="Admin/editnews.aspx" />
+			<siteMapNode title="User Accounts" description="User Accounts" url="Admin/useraccounts.aspx" />
+			<siteMapNode title="Orders" description="Orders" url="Admin/orders.aspx" />
+			<siteMapNode title="Admin Catalogue" description="Admin Catalogue" url="Admin/admincatalogue.aspx">
+				<siteMapNode title="Edit Bikes" description="Edit Bikes" url="Admin/AdminCatalogue/editbikes.aspx" />
+				<siteMapNode title="Edit Parts" description="Edit Parts" url="Admin/AdminCatalogue/editparts.aspx" />
+				<siteMapNode title="Edit Accessories" description="Edit Accessories" url="Admin/AdminCatalogue/editaccessories.aspx" />
+			</siteMapNode>
+		</siteMapNode>
+	</siteMapNode>
+</siteMap>

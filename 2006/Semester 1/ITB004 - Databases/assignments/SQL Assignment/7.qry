@@ -1,0 +1,4 @@
+SELECT orig.Title, orig.YearReleased as OriginalYear, remak.YearReleased as RemakeYear
+	FROM Movies orig, Movies remak
+	WHERE orig.Title = remak.Title 
+	AND orig.YearReleased < remak.YearReleased;

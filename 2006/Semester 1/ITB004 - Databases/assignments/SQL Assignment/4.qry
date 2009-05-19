@@ -1,0 +1,3 @@
+SELECT YearReleased, count(YearReleased) AS MoviesThatYear FROM Movies
+         GROUP BY YearReleased
+         ORDER BY MoviesThatYear DESC, YearReleased ASC;

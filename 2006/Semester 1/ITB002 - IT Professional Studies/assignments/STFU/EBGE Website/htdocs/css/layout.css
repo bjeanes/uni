@@ -1,0 +1,362 @@
+#content {  
+  height: 100%;
+  min-height: 100%;
+  text-align: left;
+}
+
+#content,
+#width {
+  /* max-width hack for IE since it doesn't understand the valid css property */
+  width: expression(document.body.clientWidth > 1000 ? "1000px" : "94%");  
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#content[id],
+#width[id] {
+  width: 94%;
+  height: auto;
+}
+
+
+
+
+/**************************************************************
+   #header: Holds the site header images
+ **************************************************************/
+
+#header {
+  position: relative;
+  height: 187px;
+  z-index:0;
+  background-image:url(../images/bg/logo-trans.png);
+  background-position:0 0;
+  background-repeat:no-repeat;
+}
+
+#innerheader {
+  height:100%;
+  width:inherit;
+  background-image:url(../images/bg/shooter-trans.png);
+  background-position:100% 0;
+  background-repeat:no-repeat;
+}
+
+/**************************************************************
+   #mainMenu: The top level site menu
+ **************************************************************/
+
+#mainMenu { 
+  float: left;
+  width: 100%;
+  clear: both;
+  z-index: 100;
+}
+
+#mainMenu ul {
+  margin: 0;
+  padding: 0;
+  height:50px;
+}
+
+#mainMenu li {
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height:50px;
+}
+
+#mainMenu li a {
+  float: left;
+  margin: 0;
+  padding: 0;
+  margin-left:10px;
+  font: 400 1.6em "trebuchet ms", serif;
+  text-decoration: none;
+  text-transform: lowercase;
+  color: #FFF;
+}
+
+#mainMenu li a:hover,
+#mainMenu li a.here {
+  height:50px;
+  background-color:#425058;
+  color: #425058;
+}
+
+#mainMenu li a img {
+	border:#425058 medium;
+}
+
+
+/**************************************************************
+   .sideMenu: The side bar menu
+ **************************************************************/
+
+ul.sideMenu {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+  background: #425058 url(../images/bg/gradientSmall.png) repeat-x bottom left;
+  min-height:250px;
+}
+
+.sideMenu li {
+  display: inline;
+  /* Needed since IE fails when you give it list-style: none; */  
+  list-style-image: url(foo.gif);
+  font: 400 1.3em "trebuchet ms", serif;
+}
+
+.sideMenu li a {
+  display: block;
+  margin: 0.2em 0;
+  padding: 3px 5px;
+  text-decoration: none;
+  color: #FFF;
+} 
+
+.sideMenu li a:hover {
+  color: #65EBFF;
+  background: #425058;
+}
+
+/* Active menu item */
+.sideMenu li.here {
+  display: block;  
+  padding: 5px;
+  color: #65EBFF;
+}
+
+/* Submenu of inactive items, to be hidden: */
+
+.sideMenu li ul, .sideMenu li ul li {
+	display:none;
+}
+
+/* Submenu of active menu item */
+.sideMenu li.here ul,
+.sideMenu li:hover ul {
+  margin: 0;
+  padding: 0;
+  
+}
+
+.sideMenu li:hover ul,
+.sideMenu li:hover ul li,
+.sideMenu li.here ul,
+.sideMenu li.here ul li {
+  display: block;
+}
+
+.sideMenu li ul li a {
+  padding-left: 35px;
+  font: 400 0.55em verdana, arial, sans-serif; 
+  color: #FFF;  
+  background: url(../images/bg/bullet.gif) no-repeat 10px 0px;
+}
+
+.sidemenu li a.locked {
+  padding-left: 35px;
+  background: url(../images/bg/lock.png) no-repeat 11px 0px;  
+}
+
+.sideMenu li ul li a:hover {
+  background: #364147 url(../images/bg/bullet.gif) no-repeat 15px 0px;
+}
+
+.sideMenu li ul li a.locked {
+  background: url(../images/bg/lock.png) no-repeat 11px 0px;
+}
+
+.sideMenu li ul li a:hover,
+.sideMenu li ul li.here2 a {
+  background-color: #364147;
+}
+
+
+/**************************************************************
+   Content Side Bar (right hand)
+ **************************************************************/
+
+div.sideBar {
+  height: 200px;
+  margin: 2em;
+}
+
+/**************************************************************
+   Login box
+ **************************************************************/
+div#login {
+	padding:5px;
+} 
+
+div#login h2 {
+ 	margin-left: 0.5em;
+ }
+
+/**************************************************************
+   #page: Holds the main page content.
+ **************************************************************/
+
+#page {
+  float: left;
+  width: 100%;
+  clear: both;  
+  padding-bottom: 4em;
+}
+
+/**************************************************************
+   #footer: The page footer - will stick to the bottom if not
+            enough content.
+ **************************************************************/
+
+#footer {
+  float: left;
+  width: 100%;
+  clear: both;
+  
+  margin-top: -3.8em;
+  background: #000 url(../images/bg/footer.jpg) repeat-x top left;
+}
+
+/* Sets the width of the footer content */
+#footer #width {
+  position: relative;
+  z-index: 3;
+  font-size: 0.85em;
+  padding-top: 27px;
+}
+
+
+
+/**************************************************************
+   Width classes used by the site columns
+ **************************************************************/
+
+.width100 {
+  width: 100%;
+}
+
+.width75 {
+  width: 74%;
+}
+
+.width50 {
+  width: 49.7%;
+}
+
+.width33 {
+  width: 32.7%;
+}
+
+.width25 {
+  width: 24.7%;
+}
+
+
+
+/**************************************************************
+   Alignment classes
+ **************************************************************/
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+
+
+/**************************************************************
+   Generic display classes
+ **************************************************************/
+
+.clear {
+  clear: both;
+}
+
+.block {
+  display: block;
+}
+
+.min250 {
+  min-height: 250px;
+}
+
+.min750 {
+  min-height: 750px;
+}
+.small {
+  font-size: 0.8em;
+}
+
+.green {
+  color: #A1FF45;
+}
+
+.red {
+  color: #EA1B00;
+}
+
+.db {
+  color: #425058;
+}
+
+.grey {
+  color: #666;
+}
+
+.grey a {
+  color: #999;
+}
+
+.grey a:hover {
+  color: #EEE;
+}
+
+.gradient {
+  margin-bottom: 2em;
+  background: #425058 url(../images/bg/gradient.png) repeat-x bottom left;
+  min-height:750px;
+}
+
+.gradientSmall {
+  margin-bottom: 2em;
+  background: #425058 url(../images/bg/gradientSmall.png) repeat-x bottom left;
+  min-height: 250px;
+}
+
+
+/**********************************************************
+    SPLASH PAGE STUFF:
+**********************************************************/
+div#splashEx,
+div#splashVi,
+div#splashPr {
+	height: 250px;
+	display:block;
+}
+splashEx {
+	background-image:url(../images/bg/splash/exhibitor.png);
+	background-attachment:fixed;
+	background-position:0 0;
+	background-repeat:no-repeat;
+}
+div#splashVi {
+	
+}
+div#splashPr {
+
+}

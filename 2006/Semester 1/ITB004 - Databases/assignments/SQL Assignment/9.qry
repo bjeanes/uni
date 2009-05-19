@@ -1,0 +1,10 @@
+select distinct title, yearreleased, format
+from movies m inner join copies c on c.movienum = m.movienum
+where rentalcode =
+  (
+    select rentalcode from rentalrates
+    where rate in
+      (
+        select min(rate) from rentalrates
+      )
+  );

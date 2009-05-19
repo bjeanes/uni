@@ -1,0 +1,6 @@
+SELECT   count(*),                   
+         max(YearReleased),
+         min(YearReleased),
+         count(DISTINCT YearReleased)
+         
+         FROM Movies;

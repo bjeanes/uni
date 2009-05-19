@@ -1,0 +1,4 @@
+SELECT * FROM Customers 
+         WHERE MobilePhoneNum IS NOT NULL
+         AND HomePhoneNum IS NULL 
+         ORDER BY FamilyName, GivenName;

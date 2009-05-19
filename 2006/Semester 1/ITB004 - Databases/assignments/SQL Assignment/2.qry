@@ -1,0 +1,3 @@
+SELECT Title FROM Movies                        
+         WHERE Title LIKE '%Star%' 
+         AND YearReleased BETWEEN 1996 AND 1999;

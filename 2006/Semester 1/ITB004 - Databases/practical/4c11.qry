@@ -1,0 +1,7 @@
+CREATE TABLE Lyrics 
+(
+AlbumCode char(12) NOT NULL,
+TrackNumber numeric(2) NOT NULL,
+LineNumber numeric(2) NOT NULL,
+Words varchar(100) NOT NULL
+)

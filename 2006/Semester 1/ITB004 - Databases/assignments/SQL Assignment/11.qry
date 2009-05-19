@@ -1,0 +1,15 @@
+select familyname, givenname, address
+from customers
+where customernum in
+(
+  select customernum
+  from rentals
+  where datereturned is null
+  group by customernum
+  having count(*) >= all
+    (
+      select count(customernum) from rentals r
+      where datereturned is null
+      group by customernum
+    )
+);
