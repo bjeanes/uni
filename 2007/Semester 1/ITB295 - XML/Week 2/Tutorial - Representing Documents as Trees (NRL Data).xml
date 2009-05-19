@@ -1,0 +1,26 @@
+<NRL>
+    <team>
+        <state>QLD</state>
+        <region>Brisbane</region>
+        <name>Broncos</name>
+        <price>9.00</price>
+    </team>
+    <team>
+        <state>NSW</state>
+        <region>Sydney</region>
+        <name>Bulldogs</name>
+        <price>7.50</price>
+    </team>
+</NRL>
+
+
+            [NRL]
+            /  \
+           /    \
+        [Team]  [Team]
+        |
+        |
+       /|\
+      / | \____________
+     /   \      \      \
+[state] [region] [name] [price]

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<products>
+	<product type ="microsoft_technologies">
+		<name> VB </name>
+		<price> 100 </price>
+		<number> 50 </number>
+	</product>
+	<product type ="microsoft_technologies">
+		<name> Vc </name>
+		<price> 200 </price>
+		<number> 30 </number>
+	</product>
+  <product type ="microsoft_technologies">
+		<name> ASP </name>
+		<price> 150 </price>
+		<number> 50 </number>
+	</product>	
+	<product type ="microsoft_technologies">
+		<name> ASP </name>
+		<price> 150 </price>
+		<number> 50 </number>
+	</product>
+	<product type ="microsoft_technologies">
+		<name> OFFICE </name>
+		<price> 2000 </price>
+		<number> 50 </number>
+	</product>	
+	<product type ="microsoft_technologies">
+		<name> Windows </name>
+		<price> 3000 </price>
+		<number> 5 </number>
+	</product>	
+	<product type ="microsoft_technologies">
+		<name> PowerPoint </name>
+		<price> 300 </price>
+		<number> 0 </number>
+	</product>	
+	<product type ="opensource_technologies">
+		<name> Java </name>
+		<price> 10 </price>
+		<number> 25 </number>
+	</product>
+	<product type ="opensource_technologies">
+		<name> Apache </name>
+		<price> 25 </price>
+		<number> 30 </number>
+	</product>	
+	<product type ="opensource_technologies">
+		<name> GNU </name>
+		<price> 10 </price>
+		<number> 25 </number>
+	</product>
+	<product type ="opensource_technologies">
+		<name> Qexo </name>
+		<price> 25 </price>
+		<number> 30 </number>
+	</product>
+ 	<product type ="opensource_technologies">
+		<name> Perl </name>
+		<price> 20 </price>
+		<number> 0 </number>
+	</product>
+	<product type ="opensource_technologies">
+		<name> Python </name>
+		<price> 35 </price>
+		<number> 12 </number>
+	</product>
+  <product type ="opensource_technologies">
+		<name> Saxon </name>
+		<price> 40 </price>
+		<number> 20 </number>
+	</product>
+	<product type ="operating_systems">
+		<name> Winnt </name>
+		<price> 200 </price>
+		<number> 0 </number>
+	</product>
+	<product type ="operating_systems">
+		<name> Winxp </name>
+		<price> 450 </price>
+		<number> 10 </number>
+	</product>
+	<product type ="operating_systems">
+		<name> Win2000 </name>
+		<price> 100 </price>
+		<number> 15 </number>
+	</product>
+	<product type ="operating_systems">
+		<name> Linux </name>
+		<price> 48 </price>
+		<number> 50 </number>
+	</product>
+	<product type ="operating_systems">
+		<name> Solaris </name>
+		<price> 50 </price>
+		<number> 4 </number>
+	</product>
+  <product type ="operating_systems">
+		<name> Mac </name>
+		<price> 289 </price>
+		<number> 9 </number>
+	</product>
+</products>

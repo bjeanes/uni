@@ -1,0 +1,54 @@
+===Exercise 1: Mounting Remote CIFS Shares===
+
+note: I wrote nas shorthand for 131.181.70.16 (nas.fit.qut.edu.au)
+        -added to /etc/hosts file to make exercises easier
+
+1. `smbclient -L //nas`
+2. `mkdir /mnt/nas`
+3. `mount.cifs //nas/HOME /mnt/nas -o user=QUTAD/n5687802,rw`
+4. entry from /etc/mtab
+    //nas/HOME /mnt/nas cifs rw,mand 0 0
+5. `ls /mnt/nas` -
+        2007/
+        Paste As Visual Basic....
+        Software/
+        Vs.php For Visual Stu....
+6. `touch prac3file; cp prac3file /mnt/nas`
+7. `umount /mnt/nas; rmdir /mnt/nas`
+8. entry gone from mtab
+
+
+===Exercise 2: Mounting Remote NFS Shares===
+
+note: I wrote ath shorthand for 131.181.116.21 (athena.fit.qut.edu.au)
+        -added to /etc/hosts file to make exercises easier
+        
+1. `showmount -e ath`
+2. `mkdir /mnt/athena`
+3. `mount -t nfs ath:/pub/721 /mnt/athena`
+4. mtab entry:
+    ath:/pub/721 /mnt/athena nfs rw,addr=131.181.116.21 0 0
+5. 1 file (README - congratulations file)
+6. `umount /mnt/athena; rmdir /mnt/athena`
+7. mtab empty
+
+===Exercise 3: Exporting NFS Shares===
+1. `xm721 create -c virtpc1` and same for virtpc2
+2. `ifconfig eth0 192.168.20.1 netmask 255.255.255.0 broadcast 192.168.20.255`
+3. `ifconfig eth0 192.168.20.2 netmask 255.255.255.0 broadcast 192.168.20.255`
+4. ping each other fine.
+5. `useradd -c "Mr W Brown" -p "blah" wbrown`
+6. `su wbrown` to become user. then `mkdir pub-wb; chmod o+rx pub-wb`
+7. `find /etc -name hosts* -type f -exec cp {} /home/wbrown/pub-wb/ \;`
+8. added '/home/wbrown/pub-wb  *(ro)' to /etc/exports
+9. `showmount -e 192.168.20.1`
+10. `mkdir /home/vmuser/mnt`
+11. `mount.nfs 192.168.20.1:/home/wbrown/pub-wb /home/vmuser/mnt`
+12. mtab entry:
+    192.168.20.1:/home/wbrown/pub-wb /home/vmuser/mnt nfs rw,addr=192.168.20.1 0 0
+13. yeah... that
+14. done
+15. no
+16. no
+
+===Exercise 4: Quota Management===

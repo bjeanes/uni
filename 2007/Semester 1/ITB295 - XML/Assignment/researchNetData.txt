@@ -1,0 +1,146 @@
+staff:
+	name: John
+	position: Lecturer
+	faculty: law
+	email : john@law.com
+	homepage : www.law.uni.edu/john
+
+	name: Mary
+	Position: Professor
+	faculty: information-technology
+	email : mary@it.com
+	homepage : www.it.uni.edu/mary
+
+	name: Lucy
+	Postion: Professor
+	faculty: law
+	email : lucy@law.com
+	homepage : www.law.uni.edu/lucy
+
+	name: Mike
+	position: Lecturer
+	faculty: information-technology
+	email : mike@it.com
+	homepage : www.it.uni.edu/mike
+
+	name: Alan
+	position: Associate Professor
+	faculty: information-technology
+	email: alan@it.com
+	homepage: www.it.uni.edu/alan
+
+	name: Tom
+	position: Professor
+	faculty: information-technology
+	email: tom@it.com
+	homepage: www.it.uni.edu/tom
+
+
+
+project:
+	id: P1
+	name: Project 1
+	description: This is a project for a small group.
+	members: Mary, Alan
+	fundings: Fund3, fund1
+	products: Prod1
+	publications: Pub1, Pub2
+	start date: 2004-08-12
+
+	id: P2
+	name: Project 2
+	description: This is a project for a commercial company.
+	members: Mary
+	fundings: Fund2,Fund3
+	products: Prod2
+	publications: Pub3, Pub4
+	start date: 2003-04-01
+	end date: 2007-03-31
+
+	id: P3
+	name: Project 3
+	description: This is a project for graduates.
+	members: Mary
+	fundings: Fund2,Fund1
+	start date: 2007-04-01
+	products: Prod3
+
+	
+
+funding:
+	id: Fund1
+	source: National Fund
+	amount: 100000
+	start date: 2007-04-01
+	end date: 2010-03-31
+
+	id: Fund2
+	source: County Fund
+	amount: 200000
+	start date: 2003-04-01
+	end date: 2007-03-31
+
+	id: Fund3
+	source: State Fund
+	amount: 300000
+	start date: 2003-01-01
+	end date:2010-03-31
+
+product:
+	id: Prod1
+	name: Software 1
+	type: software
+	date: 2005-07-01
+	cost: 100
+	authors: Mary, Alan
+
+	id: Prod2
+	name: Software 2
+	type: software
+	date: 2005-02-03
+	cost 150
+	authors: Mary
+
+	id: Prod3
+	name: Harware 1
+	type: hardware
+	date: 2007-02-03
+	cost: 432
+	authors: Mary
+
+publication:
+	id: Pub1
+	name: Publication 1
+	authors: Mary, Alan
+	type: Journal
+	detail: Detail 1
+	publisher Publisher 1	
+	date: 2005-07-01
+	
+
+	id: Pub2
+	name: Publication 2
+	authors: Mary, Alan
+	type: Conference
+	detail: Detail 2
+	publisher Publisher 2	
+	date: 2006-02-03
+	
+	id: Pub3
+	name: Publication 3
+	type: Workshop
+	detail: Detail 3
+	publisher Publisher 1	
+
+	date: 2006-07-01
+	authors: Mary
+
+	id: Pub4
+	name: Publication 4
+	type: Technical report
+	date: 2007-02-03
+	detail: Detail 4
+	publisher Publisher 3	
+	authors: Mike
+
+

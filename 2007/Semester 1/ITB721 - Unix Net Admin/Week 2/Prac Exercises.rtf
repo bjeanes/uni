@@ -1,0 +1,127 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf420
+{\fonttbl\f0\fswiss\fcharset77 Helvetica;\f1\fswiss\fcharset77 Helvetica-Bold;\f2\fnil\fcharset77 LucidaGrande;
+\f3\fnil\fcharset77 LucidaGrande-Bold;}
+{\colortbl;\red255\green255\blue255;\red11\green11\blue11;\red237\green237\blue237;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 721 Prac2\
+\
+\
+
+\f1\b Exercise 1:\
+
+\f0\b0 1. acount bjeanes does not exist using less on /etc/passwd or from using the finger command\
+2. Group called 721group added with id of 512 using command\
+	
+\f1\b groupadd -g 512 721group\
+	
+\f0\b0 less confirms that group was added\
+3.  Each switch sets a different option:\
+	
+\f1\b -u 832
+\f0\b0  gives the user a user id of 832\
+	
+\f1\b -g 264
+\f0\b0  gives group id o 624\
+	
+\f1\b -d /home/bmoore
+\f0\b0  sets the user's home directory to /home/bmoore\
+	
+\f1\b -s /bin/bash 
+\f0\b0 sets the user's default login shell to bash\
+	
+\f1\b -c "Brett Moore" 
+\f0\b0 sets the account comment (full name) to Brett Moore\
+	
+\f1\b bmoore
+\f0\b0  sets the login username to bmoore\
+4. 
+\f1\b useradd -g 512 -d /home/b -s /bin/bash -c "Bodaniel Jeanes" bjeanes\
+
+\f0\b0 5. 
+\f1\b passwd bjeanes
+\f0\b0 \
+6. \
+	bjeanes:x:501:512:Bodaniel Jeanes:/home/b:/bin/bash\
+7. <username>:<shadowed password>:<userid>:<groupid>:<comment>:<home dir>:<shell>\
+8.\
+	
+\f2\fs22 \cf2 \cb3 bjeanes:$1$apLcemht$vM1NxInIoYc6YpJsTjUht1:13579:0:99999:7:::\
+9. \'ca \'ca\'e1 \'calogin name
+\fs18 \cf2 \cb3 \
+\pard\pardeftab720\sl280\ql\qnatural
+
+\fs22 \cf2 \cb3 \'ca \'ca \'ca \'ca\'e1 \'caencrypted password
+\fs18 \cf2 \cb3 \
+
+\fs22 \cf2 \cb3 \'ca \'ca \'ca \'ca\'e1 \'cadays since Jan 1, 1970 that password was last changed
+\fs18 \cf2 \cb3 \
+
+\fs22 \cf2 \cb3 \'ca \'ca \'ca \'ca\'e1 \'cadays before password may be changed
+\fs18 \cf2 \cb3 \
+
+\fs22 \cf2 \cb3 \'ca \'ca \'ca \'ca\'e1 \'cadays after which password must be changed
+\fs18 \cf2 \cb3 \
+
+\fs22 \cf2 \cb3 \'ca \'ca \'ca \'ca\'e1 \'cadays before password is to expire that user is warned
+\fs18 \cf2 \cb3 \
+
+\fs22 \cf2 \cb3 \'ca \'ca \'ca \'ca\'e1 \'cadays after password expires that account is disabled
+\fs18 \cf2 \cb3 \
+
+\fs22 \cf2 \cb3 \'ca \'ca \'ca \'ca\'e1 \'cadays since Jan 1, 1970 that account is disabled
+\fs18 \cf2 \cb3 \
+
+\fs22 \cf2 \cb3 \'ca \'ca \'ca \'ca\'e1 \'caa reserved field\
+10.\
+	Bos-MacBook:~ bjeanes$ finger bjeanes\
+	Login: bjeanes                          Name: Bodaniel Jeanes\
+	Directory: /Users/bjeanes               Shell: /bin/bash\
+	On since Wed Mar  7 11:35 (EST) on console, idle 3:43 (messages off)\
+	On since Wed Mar  7 15:19 (EST) on ttyp1\
+	On since Wed Mar  7 15:19 (EST) on ttyp2\
+	No Mail.\
+	No Plan.\
+11. done\
+12. done\
+\
+
+\f3\b Exercise 2
+\f2\b0 :\
+1.\
+	a) 
+\f3\b groupadd -g 521 research\
+	   useradd -g 521 -d /home/jwhite -s /bin/bash -c "Mr James White" jwhite\
+	   useradd -g 521 -d /home/psmith -s /bin/bash -c "Mr Peter Smith" psmith\
+	
+\f2\b0 b) 
+\f3\b passwd psmith\
+	    passwd jwhite\
+	
+\f2\b0 c)  drwx------ \'ca2 jwhite \'ca research \'ca \'ca 4096 Mar \'ca7 15:30 jwhite
+\fs18 \cf2 \cb3 \uc0\u8232 
+\fs22 \cf2 \cb3 	     drwx------ \'ca2 psmith \'ca research \'ca \'ca 4096 Mar \'ca7 15:31 psmith\
+2.\
+	a) 
+\f3\b mkdir /home/psmith/subdir; ls /home/psmith/subdir
+\f2\b0 \
+	b) 
+\f3\b chown psmith:research /home/psmith/subdir
+\f2\b0 \
+3.\
+	a) 
+\f3\b mkdir /home/project4; ls /home/project4\
+	
+\f2\b0 b) 
+\f3\b chgrp research /home/project4; chmod g+rwx /home/project4\
+	
+\f2\b0 c) \
+\
+
+\f3\b Exercise 3:
+\f2\b0 \
+a) ls -alSr > sortedlist
+\fs18 \cf2 \cb3 \uc0\u8232 
+\fs22 \cf2 \cb3 b) head -n 1 /etc/passwd; tail -n 3 /etc/passwd; wc -l /etc/passwd
+\fs18 \cf2 \cb3 \uc0\u8232 
+\fs22 \cf2 \cb3 c) grep 721user /etc/passwd | cut -d : -f 3 -}

@@ -1,0 +1,25 @@
+<!-- Some simple test data -->
+<office>
+   <phone>1235</phone>
+   <person name="Alan">
+      <grade>2</grade>
+      <age>25</age>
+      <phone>9488</phone>
+   </person>
+   <person name="Sue">
+      <grade>8</grade>
+      <age>29</age>
+      <phone>2044</phone>
+   </person>
+   <person name="Vicky">
+      <grade>2</grade>
+      <age>29</age>
+      <phone>2738</phone>
+   </person>
+   <person name="Mike">
+      <grade>3</grade>
+      <age>25</age>
+      <phone>6995</phone>
+   </person>
+</office>
+<!-- four lonely people -->

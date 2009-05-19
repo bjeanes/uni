@@ -1,0 +1,26 @@
+<menu>
+    <meals>
+        <meal type="main course">
+            <name>Roasted beetroot soup</name>
+            <price>12.50</price>
+            <description>Roasted beetroot soup with Woodside goats curd with grilled organis sourdough &amp; marjoram butter</description>
+        </meal>
+    </meals>
+    <desserts>
+        <dessert type="tart">
+            <name>Pecan Tart</name>
+            <price>9.50</price>
+            <description>Pecan tart with cream &amp; maple sauce</description>
+        </dessert>
+    </desserts>
+    <drinks>
+        <drink type="wine">
+            <name>2005 Clairault Semillon-Sauvignon Blanc</name>
+            <price>7.50</price>
+            <description>
+                <year>2005</year>
+                <vinyard>Margaret River, WA</vinyard>
+            </description>
+        </drink>
+    </drinks>
+</menu>

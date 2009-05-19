@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<shippers>
+  <shipper>
+    <name>fedex</name>
+    <pickup>2pm</pickup>
+    <delivery-time> 1-2 days </delivery-time>
+  </shipper>
+  <shipper>
+    <name>fast courier</name>
+    <pickup>5pm</pickup>
+    <delivery-time> 2-3 days </delivery-time>
+  </shipper>
+  <shipper>
+    <name>ship mail</name>
+    <pickup>5pm</pickup>
+    <delivery-time> 4-14 days </delivery-time>
+  </shipper>
+
+</shippers>

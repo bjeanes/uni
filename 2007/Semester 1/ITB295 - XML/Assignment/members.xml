@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<members>
+  <member>
+    <name>tom</name>
+    <address> 12 foxton St, Indooroopilly </address>
+    <email> tom@edu.au </email>
+    <city> Brisbane </city>
+    <zip> 4993 </zip>
+    <status>gold</status>
+  </member>
+  <member>
+    <name>bob</name>
+    <address> 9 cruise St, Toowong </address>
+    <phone> 98776123 </phone>
+    <city> Sydney </city>
+    <zip> 2542 </zip>
+    <status>gold</status>
+  </member>
+  <member>
+    <name>sue</name>
+    <address> 1 Briar Rd, Mason </address>
+    <email> sue@com.net </email>
+    <city> Adealide </city>
+    <zip> 5632 </zip>
+    <status>silver</status>
+  </member>
+</members>

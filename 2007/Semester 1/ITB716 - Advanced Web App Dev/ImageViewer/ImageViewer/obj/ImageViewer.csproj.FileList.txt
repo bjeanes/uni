@@ -1,0 +1,16 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ImageViewer.Viewer.resources
+obj\Debug\ImageViewer.Properties.Resources.resources
+obj\Debug\ImageViewer.csproj.GenerateResource.Cache
+bin\Debug\ImageViewer.exe
+bin\Debug\ImageViewer.pdb
+obj\Debug\ImageViewer.exe
+obj\Debug\ImageViewer.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\ImageViewer.Viewer.resources
+obj\Release\ImageViewer.Properties.Resources.resources
+obj\Release\ImageViewer.csproj.GenerateResource.Cache
+bin\Release\ImageViewer.dll
+bin\Release\ImageViewer.pdb
+obj\Release\ImageViewer.dll
+obj\Release\ImageViewer.pdb

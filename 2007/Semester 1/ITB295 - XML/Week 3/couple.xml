@@ -1,0 +1,5 @@
+<?xml version="1.0"?>					
+<Couple>
+<Person age="25" sex="f">Sue</Person>
+<Person age="29" sex="m">Ian</Person>
+</Couple>

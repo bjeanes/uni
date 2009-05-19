@@ -1,0 +1,7 @@
+<!DOCTYPE nrl[
+    <!ELEMENT nrl (team)* >
+    <!ELEMENT team (name,price) >
+    <!ELEMENT name (#PCDATA) >
+    <!ELEMENT price (#PCDATA) >
+    <!ATTLIST name home (QLD|ACT|VIC|NZ|NSW) "NSW" >
+]>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" version="-//W3C//DTD XHTML 1.1//EN" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+
+	<title>genius calc</title>
+	<style type="text/css" media="screen">
+	   input
+	   {
+	       width:100%;
+	   }
+	   input[type="button"]
+	   {
+	       width:50px;
+           height:50px;
+	   }
+	</style>
+	<script type="text/javascript" charset="utf-8">
+	   window.onload = function() { current = document.getElementById('current'); };
+	   function press(d) { current.value = current.value + d; }
+	   function eq(){current.value = eval(current.value);}
+	   function clr(){current.value = '';}
+	</script>
+</head>
+
+<body>
+<table border="1" cellspacing="1" cellpadding="0">
+    <tr>
+        <td colspan="4"><input type="text" name="current" value="0" id="current">
+    </td>
+    <tr>
+        <td><input type="button" onclick="press('7');" name="num_7" value="7" id="num_7"></td>
+        <td><input type="button" onclick="press('8');" name="num_8" value="8" id="num_8"></td>
+        <td><input type="button" onclick="press('9');" name="num_9" value="9" id="num_9"></td>
+        <td><input type="button" onclick="press('/');" name="op_div" value="/" id="op_div"></td>
+    </tr>                      
+    <tr>                       
+        <td><input type="button" onclick="press('4');" name="num_4" value="4" id="num_4"></td>
+        <td><input type="button" onclick="press('5');" name="num_5" value="5" id="num_5"></td>
+        <td><input type="button" onclick="press('6');" name="num_6" value="6" id="num_6"></td>
+        <td><input type="button" onclick="press('*');" name="op_mul" value="*" id="op_mul"></td>
+    </tr>                    
+    <tr>                     
+        <td><input type="button" onclick="press('1');" name="num_1" value="1" id="num_1"></td>
+        <td><input type="button" onclick="press('2');" name="num_2" value="2" id="num_2"></td>
+        <td><input type="button" onclick="press('3');" name="num_3" value="3" id="num_3"></td>
+        <td><input type="button" onclick="press('-');" name="op_min" value="-" id="op_min"></td>
+    </tr>                       
+    <tr>                        
+        <td><input type="button" onclick="press('0');" name="num_0" value="0" id="num_0"></td>
+        <td><input type="button" onclick="press('.');" name="point" value="." id="point"></td>
+        <td><input type="button" onclick="eq();" name="op_eq" value="=" id="op_eq"></td>
+        <td><input type="button" onclick="press('+');" name="op_plus" value="+" id="op_plus"></td>
+    </tr>                    
+    <tr>                     
+        <td><input type="button" onclick="clr();" name="op_clr" value="C" id="op_clr"></td>
+    </tr>
+</table>
+
+</body>
+</html>

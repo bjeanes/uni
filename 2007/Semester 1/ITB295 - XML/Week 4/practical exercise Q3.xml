@@ -1,0 +1,15 @@
+<!DOCTYPE Menu[
+    <!ELEMENT Menu (food,wines) >
+    <!ELEMENT food (item)* >
+    <!ELEMENT item (title,price) >
+    <!ELEMENT title (#PCDATA) >
+    <!ELEMENT wines (wine)* >
+    <!ELEMENT wine (vintage,grape+,winery,state,region,price) >
+    <!ELEMENT vintage (#PCDATA) >
+    <!ELEMENT grape (#PCDATA) >
+    <!ELEMENT winery (#PCDATA) >
+    <!ELEMENT region (#PCDATA) >
+    <!ELEMENT state (#PCDATA) >
+    <!ELEMENT price (#PCDATA) >
+    <!ATTLIST item type (starter|main|sweet) #REQUIRED >
+]>

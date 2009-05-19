@@ -1,0 +1,236 @@
+/* Main CSS File */
+
+/* Remove all default browser styles */
+html, body, ul, ol, li, p, 
+h1, h2, h3, h4, h5, h6, 
+form, fieldset, a
+{ 
+	margin: 0; 
+	padding: 0; 
+	border: 0;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	font-family: Helvetica, sans-serif;
+	font-variant:small-caps;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body
+{
+	font-size: 80%;
+	font-family: Tahoma, Verdana,Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	background-color: #363531;
+	color: #CFCFCF;
+}
+
+a,a:visited,a:active,a:focus
+{
+	color:#606060;
+	text-decoration:none;
+}
+
+a:hover
+{
+	text-decoration:underline;
+}
+
+th
+{
+	text-align: left;
+}
+
+#main table, #footer table
+{
+	width:98%;
+}
+
+#main table
+{
+	border-collapse:collapse;
+}
+
+#main table th
+{
+	border-bottom: 1px solid #FFF;
+	margin-bottom: 1px;
+}
+#main table td
+{
+	padding:2px;
+	border-bottom:1px solid #353431;
+	background-color:#555452;
+}
+
+#main table tr.alt td
+{
+	background-color:#41403D;
+}
+
+#main table tr:hover td, #main table tr.alt:hover td
+{
+	background-color: #2D2C2A;
+}
+
+#main table tr.lastrow td
+{
+	text-align:right;
+}
+
+#footer table
+{
+	margin:10px;
+	border-top: 1px solid #CFCFCF;
+	width:90%;
+}
+
+#footer table th
+{
+	background-color:#AFAFAF;
+	margin:0;
+	margin-top:1px;
+}
+
+#footer table tr
+{
+	background-color: #E2E2E2;
+}
+
+#footer table tr.alt td
+{
+	background-color: #EDEDED;
+	border-top: 1px solid #CFCFCF;
+	border-bottom: 1px solid #CFCFCF;
+}
+
+#footer table tr:hover td, #footer table tr.alt:hover td
+{
+	background-color: #C8DDDD;
+}
+
+.clear
+{
+	clear:both;
+}
+
+
+#header
+{
+	font-size: 100%;
+}
+
+#menu #search
+{
+	position:absolute;
+	right: 15px;
+	top: 58px;
+}
+
+#header ul
+{
+	padding-top:1px;
+	margin-left:10px;
+	height:20px;
+}
+
+#menu ul li a
+{
+	display:block;
+	margin-right:12px;
+	padding-top:4px;
+	padding-left: 6px;
+	padding-right:6px;
+	padding-bottom:2px;
+	width:auto;
+}
+
+#submenu ul li a
+{
+	display:block;
+/*	height:20px;*/
+}
+
+#menu ul li a.selected, #menu ul li a:hover
+{
+	padding-left:5px;
+	padding-right:5px;
+	background-color:#C8DDDD;
+	border: 1px solid #BEBEBE;
+}
+
+#menu
+{
+	font-weight:900;
+	font-size:120%;
+	font-family: Arial, sans-serif;
+	margin-top: 55px;
+	background: #e8e8e8 url(Images/menubg.gif) repeat-x scroll 0 0;
+	height:28px;
+	color:#606060;
+}
+
+#searchbox
+{
+	background: #fff url(Images/mag.gif) no-repeat scroll 3px 50%;
+	padding-left: 22px;
+}
+
+#submenu
+{
+	background: #e8e8e8 url(Images/submenubg.gif) repeat-x scroll 0 0;
+	height:20px;
+	color:#606060;
+}
+
+#submenu ul
+{
+	padding-top:2px;
+	margin-left:15px;
+}
+
+#submenu ul li
+{
+	margin-right:15px;
+}
+
+#main,#right
+{
+	padding:10px;
+}
+#main
+{
+	width: 70%;
+	float: left;
+	height: 500px;
+}
+#right
+{
+	float: left;
+	margin-left: 10px;
+}
+
+#footer
+{
+	position:absolute;
+	bottom: 5px;
+	width:100%;
+	background: #e8e8e8 url(Images/searchResultsBg.gif) repeat-x scroll 0 0;
+	height:104px;
+	color:#606060;
+	overflow:auto;
+}
+
+#menu ul, #submenu ul
+{
+	list-style: none;
+}
+
+#menu ul li, #submenu ul li
+{
+	display: block;
+	float:left;
+	clear:none;
+}

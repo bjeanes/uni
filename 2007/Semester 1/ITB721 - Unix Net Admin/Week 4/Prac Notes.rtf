@@ -1,0 +1,145 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf420
+{\fonttbl\f0\fswiss\fcharset77 Helvetica-Bold;\f1\fswiss\fcharset77 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\info
+{\author Bodaniel Jeanes}
+{\*\company bjeanes.com}
+{\*\copyright Bodaniel Jeanes}}\paperw11900\paperh16840\margl1440\margr1440\vieww11900\viewh14260\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\b\fs30 \cf0 Exercise 1: Process Management\
+
+\f1\b0\fs22 \
+
+\fs24 1. \
+	a) 
+\f0\b ps uf\
+
+\f1\b0 	b) 
+\f0\b ps -furoot\
+
+\f1\b0 	c) 
+\f0\b ps -lC sendmail\
+
+\f1\b0 	d) 
+\f0\b ps -fe\
+
+\f1\b0 	e) 
+\f0\b ps -fe --sort=uid\
+
+\f1\b0 	f)  
+\f0\b ps -C bash -o pid=\
+
+\f1\b0 2.\
+\
+	UID			PID		PPID 	CMD\
+	root			1		0		init [5]\
+	n5687802		3506		3502		bash\
+	n5687802		3551		3502		bash\
+\
+	UID is the user who is running the process\
+	PID is the process id of the process\
+	PPID is the proccess ID of the process' parent\
+	CMD	 is the name of the command that initiated the process\
+3. 	process gnome-terminal (PID=3502) is the parent of both bash processes (PPID=3502)\
+4.	use the command `top`, press capital 'F' to show sort options, sort by CPU. 
+\f0\b Xorg
+\f1\b0  is the most CPU-intensive process\
+5. 	the most 'not nice' (least favoured for resource-use -- get's least priority) processes are 
+\f0\b ksoftirqd
+\f1\b0  and 
+\f0\b anacron
+\f1\b0 . The nicest command (highest priority) is 
+\f0\b krfcommd
+\f1\b0 .\
+	This is determined by sorting by NI, using 'R' to reverse sort order.\
+6.	
+\f0\b kill `ps -C cupsd -o pid=`
+\f1\b0 \
+7.	
+\f0\b killall xclock
+\f1\b0 \
+\
+
+\f0\b\fs28 Exercise 2: Using SSH
+\f1\b0 \
+\
+
+\fs24 1-4.	too easy (refer to earlier pracs)\
+5. 	
+\f0\b service sshd start 
+\f1\b0 \
+6. 	I use ssh all the time. easy.\
+\
+
+\f0\b\fs28 Exercise 3: Using SCP\
+
+\f1\b0\fs24 \
+1-2.	Done and Done (created users using 
+\f0\b useradd
+\f1\b0 )\
+3.	
+\f0\b service sshd start
+\f1\b0 \
+4.	
+\f0\b cd ~; touch testing\
+
+\f1\b0 5.	
+\f0\b cd ~: touch results
+\f1\b0 \
+6.	
+\f0\b scp testing 192.168.20.2:testing
+\f1\b0 \
+7.	
+\f0\b ls
+\f1\b0  (file was there!)\
+8. 	
+\f0\b scp results 192.168.20.1:results
+\f1\b0 \
+9.	file was tehre\
+\
+
+\f0\b\fs28 Exercise 4: Setting up SSH Public Key Authentication\
+
+\f1\b0\fs24 \
+Optional ... so not doing it ... too hard :-P\
+\
+
+\f0\b\fs28 Exercise 5: Configuring the Telnet Service
+\f1\b0 \
+
+\fs24 \
+1.	starting machines with 
+\f0\b xm721
+\f1\b0 \
+2.	
+\f0\b ifconfig
+\f1\b0  command used\
+3.	Connectivity fine\
+4.	
+\f0\b nano /etc/hosts
+\f1\b0  <-- added given lines to this file\
+5.	
+\f0\b ifconfig eth1 192.168.74.1 netmask 255.255.255.0 broadcast 192.168.74.255\
+
+\f1\b0 6.	downloaded from blackboard then 
+\f0\b ./configure-parent
+\f1\b0  after 
+\f0\b chmod +x configure-parent
+\f1\b0 \
+7.	parent and virtpc1 can ping each other\
+8.	\
+	a) downloaded in parent machine\
+	b) 
+\f0\b scp <file> 192.168.74.1:<file>
+\f1\b0 \
+	c) 
+\f0\b rpm -i <file1> <file2>
+\f1\b0 \
+9.	
+\f0\b nano /etc/xinetd.d/telnet
+\f1\b0  -- change disable = yes to disable = no\
+	
+\f0\b /etc/init.d/xinetd start\
+
+\f1\b0 10.}

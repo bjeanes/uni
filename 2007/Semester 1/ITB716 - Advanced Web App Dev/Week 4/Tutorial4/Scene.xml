@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scene xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AmbientColor>
+    <R>0.2</R>
+    <G>0.2</G>
+    <B>0.2</B>
+  </AmbientColor>
+  <ViewPoint>
+    <X>200</X>
+    <Y>200</Y>
+    <Z>600</Z>
+  </ViewPoint>
+  <MaxRecursion>12</MaxRecursion>
+  <LightPoint>
+    <X>50</X>
+    <Y>50</Y>
+    <Z>800</Z>
+  </LightPoint>
+  
+  <!-- The vector distance light will travel -->
+  <LightIntensity>100000</LightIntensity>
+  
+  <!-- De Plane -->
+  <Plane>
+    <Color>
+      <R>1.5</R>
+      <G>1.5</G>
+      <B>1.5</B>
+    </Color>
+    <Transparency>0</Transparency>
+    <Refraction>0</Refraction>
+    <Reflection>0.5</Reflection>
+    <Diffusion>1</Diffusion>
+    <Luminosity>0</Luminosity>
+    <Center>
+      <X>200</X>
+      <Y>200</Y>
+      <Z>-500</Z>
+    </Center>
+    <PerpendicularVector>
+      <X>0.57</X>
+      <Y>0.57</Y>
+      <Z>0.57</Z>
+    </PerpendicularVector>
+    
+    <ImageFile>logo.gif</ImageFile>
+  
+  </Plane>
+  
+  <!-- The light source -->
+  <Sphere>
+    <Luminosity>1</Luminosity>
+    <Center>
+      <X>50</X>
+      <Y>50</Y>
+      <Z>800</Z>
+    </Center>
+    <Radius>45</Radius>
+    <Color>
+      <R>2.3</R>
+      <G>2.3</G>
+      <B>2.3</B>
+    </Color>
+    <Transparency>0</Transparency>
+    <Refraction>0</Refraction>
+    <Reflection>0.5</Reflection>
+    <Diffusion>0.5</Diffusion>
+  </Sphere>
+
+  <!-- Sphere 1 (bottom right furthest out) -->
+  <Sphere>
+    <Center>
+      <X>450</X>
+      <Y>420</Y>
+      <Z>-850</Z>
+    </Center>
+    <Radius>175</Radius>
+    <Color>
+      <R>1</R>
+      <G>1</G>
+      <B>0.2</B>
+    </Color>
+    <Transparency>0.1</Transparency>
+    <Refraction>0</Refraction>
+    <Reflection>0.7</Reflection>
+    <Diffusion>0</Diffusion>
+    <Luminosity>0</Luminosity>
+  </Sphere>
+  
+  <!-- Sphere 2 -->
+  <Sphere>
+    <Center>
+      <X>440</X>
+      <Y>240</Y>
+      <Z>-650</Z>
+    </Center>
+    <Radius>150</Radius>
+    <Color>
+      <R>1</R>
+      <G>0</G>
+      <B>0</B>
+    </Color>
+    <Transparency>0.1</Transparency>
+    <Refraction>0</Refraction>
+    <Reflection>0.6</Reflection>
+    <Diffusion>0</Diffusion>
+    <Luminosity>0</Luminosity>
+  </Sphere>
+  
+  <!-- Sphere 3 -->
+  <Sphere>
+    <Center>
+      <X>400</X>
+      <Y>75</Y>
+      <Z>-500</Z>
+    </Center>
+    <Radius>125</Radius>
+    <Color>
+      <R>0</R>
+      <G>1</G>
+      <B>0</B>
+    </Color>
+    <Transparency>0.5</Transparency>
+    <Refraction>.8</Refraction>
+    <Reflection>0.2</Reflection>
+    <Diffusion>0</Diffusion>
+    <Luminosity>0</Luminosity>
+  </Sphere>
+  
+  <!-- Sphere 4 -->
+  <Sphere>
+    <Center>
+      <X>320</X>
+      <Y>20</Y>
+      <Z>-350</Z>
+    </Center>
+    <Radius>100</Radius>
+    <Color>
+      <R>0</R>
+      <G>.2</G>
+      <B>.8</B>
+    </Color>
+    <Transparency>.5</Transparency>
+    <Refraction>.8</Refraction>
+    <Reflection>0.4</Reflection>
+    <Diffusion>0</Diffusion>
+    <Luminosity>0</Luminosity>
+  </Sphere>
+  
+  <!-- Sphere 5 -->
+  <Sphere>
+    <Center>
+      <X>250</X>
+      <Y>10</Y>
+      <Z>-250</Z>
+    </Center>
+    <Radius>85</Radius>
+    <Color>
+      <R>.8</R>
+      <G>.5</G>
+      <B>.5</B>
+    </Color>
+    <Transparency>0.5</Transparency>
+    <Refraction>.8</Refraction>
+    <Reflection>0.2</Reflection>
+    <Diffusion>0</Diffusion>
+    <Luminosity>0</Luminosity>
+  </Sphere>
+  
+  <!-- Sphere 6 -->
+  <Sphere>
+    <Center>
+      <X>180</X>
+      <Y>20</Y>
+      <Z>-125</Z>
+    </Center>
+    <Radius>65</Radius>
+    <Color>
+      <R>.5</R>
+      <G>1</G>
+      <B>.5</B>
+    </Color>
+    <Transparency>0.5</Transparency>
+    <Refraction>.8</Refraction>
+    <Reflection>0.2</Reflection>
+    <Diffusion>.1</Diffusion>
+    <Luminosity>0</Luminosity>
+  </Sphere>
+
+  <!-- Sphere 7 -->
+  <Sphere>
+    <Center>
+      <X>120</X>
+      <Y>30</Y>
+      <Z>-75</Z>
+    </Center>
+    <Radius>45</Radius>
+    <Color>
+      <R>1</R>
+      <G>1</G>
+      <B>.5</B>
+    </Color>
+    <Transparency>0.5</Transparency>
+    <Refraction>.8</Refraction>
+    <Reflection>0.2</Reflection>
+    <Diffusion>.1</Diffusion>
+    <Luminosity>0</Luminosity>
+  </Sphere>
+
+  <!-- Sphere 8 -->
+  <Sphere>
+    <Center>
+      <X>70</X>
+      <Y>55</Y>
+      <Z>-35</Z>
+    </Center>
+    <Radius>35</Radius>
+    <Color>
+      <R>1</R>
+      <G>.25</G>
+      <B>.5</B>
+    </Color>
+    <Transparency>0.5</Transparency>
+    <Refraction>.8</Refraction>
+    <Reflection>0.2</Reflection>
+    <Diffusion>.1</Diffusion>
+    <Luminosity>0</Luminosity>
+  </Sphere>
+  
+  <!-- Sphere 9 -->
+  <Sphere>
+    <Center>
+      <X>50</X>
+      <Y>80</Y>
+      <Z>0</Z>
+    </Center>
+    <Radius>25</Radius>
+    <Color>
+      <R>.5</R>
+      <G>.25</G>
+      <B>1</B>
+    </Color>
+    <Transparency>0.1</Transparency>
+    <Refraction>.8</Refraction>
+    <Reflection>0.4</Reflection>
+    <Diffusion>.1</Diffusion>
+    <Luminosity>0</Luminosity>
+  </Sphere>
+
+  
+  <!-- Sphere (big one in the bottom left corner) -->
+  <Sphere>
+    <Center>
+      <X>85</X>
+      <Y>300</Y>
+      <Z>-300</Z>
+    </Center>
+    <Radius>160</Radius>
+    <Color>
+      <R>0</R>
+      <G>.25</G>
+      <B>1</B>
+    </Color>
+    <Transparency>0.2</Transparency>
+    <Refraction>0</Refraction>
+    <Reflection>.9</Reflection>
+    <Diffusion>0</Diffusion>
+    <Luminosity>0</Luminosity>
+  </Sphere>
+
+  
+</Scene>

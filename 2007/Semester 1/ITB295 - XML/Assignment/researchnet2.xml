@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<researchnet>
+	<staff>
+		<person>
+			<name>John</name>
+			<position>Lecturer</position>
+			<faculty>law</faculty>
+			<email>john@law.com</email>
+			<homepage>www.law.uni.edu/john</homepage>
+		</person>
+		<person>
+			<name>Mary</name>
+			<position>Professor</position>
+			<faculty>information-technology</faculty>
+			<email>mary@it.com</email>
+			<homepage>www.it.uni.edu/mary</homepage>
+		</person>
+		<person>
+			<name>Lucy</name>
+			<position>Professor</position>
+			<faculty>law</faculty>
+			<email>lucy@law.com</email>
+			<homepage>www.law.uni.edu/lucy</homepage>
+		</person>
+		<person>
+			<name>Mike</name>
+			<position>Lecturer</position>
+			<faculty>information-technology</faculty>
+			<email>mike@it.com</email>
+			<homepage>www.it.uni.edu/john</homepage>
+		</person>
+		<person>
+			<name>Alan</name>
+			<position>Associate Professor</position>
+			<faculty>information-technology</faculty>
+			<email>alan@it.com</email>
+			<homepage>www.it.uni.edu/mike</homepage>
+		</person>
+		<person>
+			<name>Tom</name>
+			<position>Professor</position>
+			<faculty>information-technology</faculty>
+			<email>tom@it.com</email>
+			<homepage>www.it.uni.edu/tom</homepage>
+		</person>
+	</staff>
+	<projects>
+		<project id="P1">
+			<name>Project 1</name>
+			<description>This is a project for a small group.</description>
+			<members>Mary, Alan</members>
+			<fundings>Fund3, Fund1</fundings>
+			<products>Prod1</products>
+			<publications>Pub1, Pub2</publications>
+			<start-date>2004-08-12</start-date>
+		</project>
+		<project id="P2">
+			<name>Project 2</name>
+			<description>This is a project for a commercial company.</description>
+			<members>Mary</members>
+			<fundings>Fund2, Fund3</fundings>
+			<products>Prod2</products>
+			<publications>Pub3, Pub4</publications>
+			<start-date>2003-04-01</start-date>
+			<end-date>2007-03-31</end-date>
+		</project>
+		<project id="P3">
+			<name>Project 3</name>
+			<description>This is a project for graduates.</description>
+			<members>Mary</members>
+			<fundings>Fund2,Fund1</fundings>
+			<products>Prod3</products>
+			<start-date>2007-04-01</start-date>
+		</project>
+	</project>
+	<funding>
+		<funding id="Fund1">
+			<source>National Fund</source>
+			<amount>100000</amount>
+			<start-date>2007-04-01</start-date>
+			<end-date>2010-03-31</end-date>
+		</funding>
+		<funding id="Fund2">
+			<source>County Fund</source>
+			<amount>200000</amount>
+			<start-date>2003-04-01</start-date>
+			<end-date>2007-03-31</end-date>
+		</funding>
+		<funding id="Fund3">
+			<source>State Fund</source>
+			<amount>300000</amount>
+			<start-date>2003-01-01</start-date>
+			<end-date>2010-03-31</end-date>
+		</funding>
+	</funding>
+	<products>
+		<product id="Prod1">
+			<name>Software 1</name>
+			<type>software</type>
+			<date>2005-07-01</date>
+			<cost>100</cost>
+			<authors>Mary, Alan</authors>
+		</product>
+		<product id="Prod2">
+			<name>Software 2</name>
+			<type>software</type>
+			<date>2005-02-03</date>
+			<cost>150</cost>
+			<authors>Mary</authors>
+		</product>
+		<product id="Prod3">
+			<name>Hardware 1</name>
+			<type>hardware</type>
+			<date>2007-02-03</date>
+			<cost>432</cost>
+			<authors>Mary</authors>
+		</product>
+	</product>
+	<publications>
+		<publication id="Pub1">
+			<name>Publication 1</name>
+			<authors>Mary, Alan</authors>
+			<type>Journal</type>
+			<detail>Detail 1</detail>
+			<publisher>Publisher 1</publisher>
+			<date>2005-07-01</date>
+		</publication>
+		<publication id="Pub2">
+			<name>Publication 2</name>
+			<authors>Mary, Alan</authors>
+			<type>Conference</type>
+			<detail>Detail 2</detail>
+			<publisher>Publisher 2</publisher>
+			<date>2006-02-03</date>
+		</publication>
+		<publication id="Pub3">
+			<name>Publication 3</name>
+			<authors>Mary</authors>
+			<type>Workshop</type>
+			<detail>Detail 3</detail>
+			<publisher>Publisher 1</publisher>
+			<date>2006-07-01</date>
+		</publication>
+		<publication id="Pub4">
+			<name>Publication 4</name>
+			<authors>Mike</authors>
+			<type>Technical report</type>
+			<detail>Detail 4</detail>
+			<publisher>Publisher 3</publisher>
+			<date>2007-02-03</date>
+		</publication>
+	</publication>
+</researchnet>
+
